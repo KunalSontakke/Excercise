@@ -42,8 +42,8 @@ driver.delete_cookie("foo")
 
 """What is Packing in python ?
 - Packing is a technique in python with which we put several values into a single iterator.
- We can perform packing by using simple syntax for declaration of iterables 
- like list or tuples or we can use asterisk operator * for packing. """
+We can perform packing by using simple syntax for declaration of iterables 
+like list or tuples or we can use asterisk operator * for packing. """
 
 num1 = 1
 num2 = 2

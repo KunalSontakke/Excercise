@@ -439,11 +439,25 @@
 
 
 # count the numbers of 0's and 1's which are transversing
-str = "0110100110011"
-count = 0
-for i in range(1,len(str)):
-    if str[i] != str[i-1]:
-        count += 1
-print(count)
+# str = "0110100110011"
+# count = 0
+# for i in range(0,len(str)):
+#     if str[i] != str[i-1]:
+#         count += 1
+# print(count)
 
 
+# str = "avinash"
+# num = '5678'
+# expected_output = "a5v6i7n8ash"
+# out = ""
+# for char,dig in zip(str,num):
+#     out = out + char+ dig
+#
+#
+# if len(str) > len(num):
+#     out += str[len(num):]
+# elif len(num) > len(str):
+#     out += num[len(str):]
+#
+# print(out)

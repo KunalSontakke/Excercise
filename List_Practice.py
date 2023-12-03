@@ -61,22 +61,22 @@
 # print(op_lis)
 #
 # # ========================================================================================
-# # Exercise 5: Iterate both lists simultaneously
-# # list1 = [10, 20, 30, 40]
-# # list2 = [100, 200, 300, 400]
+# Exercise 5: Iterate both lists simultaneously
+# list1 = [10, 20, 30, 40]
+# list2 = [100, 200, 300, 400]
 # out_list = []
-# # for i,j in zip(list1,list2[::-1]):
-# #     print(i,j)
-# #
+# for i,j in zip(list1,list2[::-1]):
+#     print(i,j)
 #
-# # ==================================================================================================
 #
-# # Exercise 6: Remove empty strings from the list of strings
+# ==================================================================================================
+#
+# Exercise 6: Remove empty strings from the list of strings
 # list_a = ["Mike", "", "Emma", "Kelly", "", "Brad"]
 # re_list = [i for i in list_a if i != ""]
 # print(re_list)
 #
-# # =================================================================================================
+# =================================================================================================
 # # Exercise 7: Add new item to list after a specified item
 # list1 = [10, 20, [300, 400, [5000, 6000], 500], 30, 40]
 #
@@ -86,7 +86,7 @@
 # print(list1)
 # #
 # # ================================================================================================
-# # Exercise 8: Extend nested list by adding the sublist
+# Exercise 8: Extend nested list by adding the sublist
 # list_b = ["a", "b", ["c", ["d", "e", ["f", "g"], "k"], "l"], "m", "n"]
 #
 # # sub list to add
@@ -159,7 +159,7 @@
 # # Exercise 8: Write a program to sum all the elements of a list.
 # #
 # # Hint
-# num6 = [2, 3, 2, 4, 7, 8]
+num6 = [2, 3, 2, 4, 7, 8]
 # #
 # # Expected output
 # # Sum of list items 26
@@ -169,8 +169,9 @@
 #     Sum = Sum + i
 #
 # print("\nSum of items in list is", Sum)
-#
-# # ===============================================================================
+
+
+# ===================================================================================================
 # #  Write a program to get the maximum number from a list.
 #
 # # Hint
@@ -194,6 +195,12 @@
 #     if i not in res:
 #         res.append(i)
 # print(res)
+
+# OR
+
+# unique_nums = []
+# [unique_nums.append(num) for num in num8 if num not in unique_nums]
+# print(unique_nums)
 #
 # # ===============================================================================
 # #  Write a program in Python to choose a random item from a list.
@@ -266,14 +273,14 @@
 # # print(Sample_list1)
 #
 # # ===================================================================================================
-# # # Write a Python program to create a list by concatenating a given list with a range from 1 to n.
-# # Sample_list3 = ['p', 'q']
-# # # n =5
-# # # Sample Output : ['p1', 'q1', 'p2', 'q2', 'p3', 'q3', 'p4', 'q4', 'p5', 'q5']
-# # n = int(input("Enter the range : "))
-# # op = [['p'+str(i),'q'+str(i)] for i in range(1,n+1)]
-# #
-# # print(op)
+# Write a Python program to create a list by concatenating a given list with a range from 1 to n.
+# Sample_list3 = ['p', 'q']
+# n =5
+# Sample Output : ['p1', 'q1', 'p2', 'q2', 'p3', 'q3', 'p4', 'q4', 'p5', 'q5']
+# n = int(input("Enter the range : "))
+# op = [['p'+str(i),'q'+str(i)] for i in range(1,n+1)]
+#
+# print(op)
 #
 # # ==================================================================================================
 # #  Write a Python program to find missing and additional values in two lists.
@@ -338,7 +345,7 @@
 # # Write a Python program to convert a pair of values into a sorted unique array.
 # # Original_List=  [(1, 2), (3, 4), (1, 2), (5, 6), (7, 8), (1, 2), (3, 4), (3, 4), (7, 8), (9, 10)]
 # # # Sorted Unique Data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-# #
+#
 # # sin = []
 # # for i in Original_List:
 # #     if i not in sin:
@@ -395,17 +402,17 @@
 #
 # # out = []
 #
-# # for i in range(3):
-# #     out.append(C[i::3])
+#  for i in range(3):
+#      out.append(C[i::3])
 #
-# # print(out)
+#  print(out)
 #
-# # =========================================================================
-# #  Write a Python program to move all zero digits to the end of a given list of numbers.
-# # Expected output:
+# =========================================================================
+# Write a Python program to move all zero digits to the end of a given list of numbers.
+# Expected output:
 # inp_list=[3, 4, 0, 0, 0, 6, 2, 0, 6, 7, 6, 0, 0, 0, 9, 10, 7, 4, 4, 5, 3, 0, 0, 2, 9, 7, 1]
-# # Move all zero digits to end of the said list of numbers:
-# # oup_list = [3, 4, 6, 2, 6, 7, 6, 9, 10, 7, 4, 4, 5, 3, 2, 9, 7, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+# Move all zero digits to end of the said list of numbers:
+# oup_list = [3, 4, 6, 2, 6, 7, 6, 9, 10, 7, 4, 4, 5, 3, 2, 9, 7, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 #
 # oup_list = []
 #
@@ -527,7 +534,7 @@ import random
 
 # lis = [0, 0, 1, 2, 3, 4, 4, 5, 6, 6, 6, 7, 8, 9, 4, 4]
 # res = []
-# for i in range(1, len(lis)):
+# for i in range(0, len(lis)):
 #     if lis[i] != lis[i - 1]:
 #         res.append(lis[i])
 # print(res)
@@ -919,13 +926,13 @@ Sample Output
 
 # =====================================================================================================================
 """
- Write a Python program to get all unique combinations of two Lists
+Write a Python program to get all unique combinations of two Lists
 
 Sample Output
 
-['A','B','C']
+lis1 = ['A','B','C']
 
-[1,2,3]
+lis2  = [1,2,3]
 
 [ [('A', 1), ('B', 2), ('C', 3)], [('A', 1), ('C', 2), ('B', 3)], [('B', 1), ('A', 2), ('C', 3)], [('B', 1), ('C', 2), 
 ('A', 3)], [('C', 1), ('A', 2), ('B', 3)], [('C', 1), ('B', 2), ('A', 3)] ]
@@ -940,31 +947,139 @@ Sample Output
 """
 Write a Python Program to Remove Consecutive K element records
 
-Sample Output
+Sample Input
 
 [ ('A', 'B', 'C', 'D'), ('B', 'C', 'C', 'I'), ('H', 'D', 'B', 'C'), ('C', 'C', 'G', 'F') ]
 
+Sample Output
 [ ('A', 'B', 'C', 'D'), ('H', 'D', 'B', 'C') ]
 
 """
-inp = [('A', 'B', 'C', 'D'), ('B', 'C', 'C', 'I'), ('H', 'D', 'B', 'C'), ('C', 'C', 'G', 'F')]
-for i in inp:
-    for j in range(1,len(i)):
-        if i[j] == "C" and i[j+1] == "C":
-            inp.pop(j)
-print(inp)
+# inp = [('A', 'B', 'C', 'D'), ('B', 'C', 'C', 'I'), ('H', 'D', 'B', 'C'), ('C', 'C', 'G', 'F')]
+# for i in inp:
+#     for j in range(1,len(i)):
+#         if i[j] == "C" and i[j+1] == "C":
+#             inp.pop(j)
+# print(inp)
 
 # ======================================================================================================================
 
 
 # Write a Python program to count the number of sub lists that contain a particular element.
 # Original list:
-# [[1, 3], [5, 7], [1, 11], [1, 15, 7]]
+inp = [[1, 3], [5, 7], [1, 11], [1, 15, 7]]
 # Count 1 in the said list:
 # 3
 # Count 7 in the said list:
 # 2
+# count = 0
+# num = int(input("Enter the number : "))
+# for i in inp:
+#     for j in i:
+#         if j == num:
+#             count += 1
+# print(f"count {num} in the said list is {count}")
+
+# ======================================================================================================================
+# Write a Python function find the length of the longest increasing sub-sequence in a list.
 
 
+# def increasing_sub_sequence():
+#     """
+#
+#     :return: count of increasing sub-sequence
+#     """
+#
+#     list = [10,20,30,40,50,60,70,80]
+#     count = 1
+#     # max_count = 1
+#     for i in range(1,len(list)):
+#         if list[i] > list[i-1]:
+#             count += 1
+#         else:
+#             count = 1
+#     print(count)
+#
+# increasing_sub_sequence()
 
+# =====================================================================================================================
+# Write a Python function to find the kth smallest element in a list.
+# def find_kth_element(k):
+#     """
+#
+#     :param k: kth element
+#     :return: it will kth smallest element in list
+#     """
+#
+#     nums = [1, 2, 4, 3, 5, 4, 6, 9, 2, 1]
+#     for i in range(0,len(nums)):
+#         for j in range(i+1,len(nums)):
+#             if nums[i] > nums[j]:
+#                 nums[i],nums[j] = nums[j],nums[i]
+#     print(nums)
+#     print(nums[k])
+#
+# k = int(input("Enter kth smallest element to find : "))
+# print(f"{k}th element in list is {find_kth_element(k)}")
 
+# =====================================================================================================================
+
+# Write a Python function to find the kth the largest element in a list
+# def find_kth_element(k):
+#     """
+#
+#     :param k: kth element in list
+#     :return: it returns kth largest element in list
+#     """
+#     nums = [1, 2, 4, 3, 5, 4, 6, 9, 2, 1]
+#     for i in range(0,len(nums)):
+#         for j in range(i+1,len(nums)):
+#             if nums[i] >= nums[j]:
+#                 nums[i],nums[j] = nums[j],nums[i]
+#
+#     print(nums)
+#     print(nums[-k])
+#
+# k = int(input("Enter kth largest element in list :"))
+#
+# find_kth_element(k)
+
+# ======================================================================================================================
+#  Write a Python function to check if a list is a palindrome or not. Return true otherwise false
+# def check_palindrome_list():
+#     """
+#
+#     :return: return True if list is palindrome else False
+#     """
+#     nums = [1, 2, 4, 3, 5, 4, 6, 9, 2, 1]
+#     return True if nums == nums[::-1] else False
+#
+# print(check_palindrome_list())
+
+# ======================================================================================================================
+# Write a Python function to remove duplicates from a list while preserving the order.
+# def remove_duplicates():
+#     res = []
+#     lis = [1, 2, 4, 3, 5, 4, 6, 9, 2, 1]
+#     for i in range(0,len(lis)):
+#         for j in range(i+1,len(lis)):
+#             if lis[i] >= lis[j]:
+#                 lis[i],lis[j] = lis[j],lis[i]
+#     for i in lis:
+#         if i not in res:
+#             res.append(i)
+#     print(res)
+#
+# remove_duplicates()
+
+# ======================================================================================================================
+# Write a Python a function to find the maximum sum sub-sequence in a list. Return the maximum value
+# def find_max_sum():
+#     nums = [1, 2, 4, 3, 5, 4, 6, 9, 2, -10]
+#     sum = 0
+#     for i in nums:
+#         if i > 0:
+#             sum += i
+#     print(sum)
+#
+# find_max_sum()

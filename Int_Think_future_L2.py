@@ -22,25 +22,24 @@
 
 """
 
-
 """input = [6,3,5,8,1]
 output = [2,4,7]"""
 
-inputs = [6,3,5,8,1]
+inputs = [6, 3, 5, 8, 1]
 result = []
-for i in range(min(inputs),max(inputs)):
+for i in range(min(inputs), max(inputs)):
     if i not in inputs:
         result.append(i)
 print(result)
 
 # Immutable tuple
-x = (1,2,3)
+x = (1, 2, 3)
 y = x
-x = (4,5,6)
-x = (6,7,8)
+x = (4, 5, 6)
+x = (6, 7, 8)
 
-print("y is",y)
-print("x is",x)
+print("y is", y)
+print("x is", x)
 
 """How to add cookie"""
 """what is cookie ?
@@ -59,7 +58,7 @@ driver = webdriver.Chrome(service=service_obj)
 driver.get("https://www.flipkart.com")
 
 # create a cookie object
-cookie = {"name" : "flip_cookie",
+cookie = {"name": "flip_cookie",
           "value": "123456"}
 
 # add cookie to the current session
@@ -82,11 +81,11 @@ driver.refresh()
     Tests that take a lot of effort and time when manual testing.
     
 """
+
+
 def main():
-   print("Hi Interviewbit!")
-if __name__=="__main__":
-   main()
+    print("Hi Interviewbit!")
 
 
-
-
+if __name__ == "__main__":
+    main()

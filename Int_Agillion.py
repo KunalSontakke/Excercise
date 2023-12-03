@@ -36,8 +36,8 @@ lis2 = lis1
 
 "check if there are consecutive elements or not"
 
-lis1 = [2, 5, 2, 2, 5]
-lis2 = [5, 5, 2, 2, 2]
-for i in range(len(lis1)):
-    if lis1[i] == lis1[i - 1]:
+lisa = [2, 5, 2, 2, 5]
+lisb = [5, 5, 2, 2, 2]
+for i in range(len(lisa)):
+    if lisa[i] == lisb[i - 1]:
         print("True")

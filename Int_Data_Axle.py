@@ -1,10 +1,10 @@
 """"
-1.Framework Structure
-2.difference between class and object
-3.Public, Protected and Private Specifier
+1. Framework Structure
+2. difference between class and object
+3. Public, Protected and Private Specifier
 4. difference between driver.close() and driver.quit
-5.How can we write/find xpath
-6.
+5. How can we write/find xpath
+
 """
 """count the frequency of each letter regardless of it's case"""
 

@@ -1,5 +1,4 @@
 """
-
 Write a Python function that takes a string as input and returns "None" if the string is empty,
 otherwise it returns the given string.
 

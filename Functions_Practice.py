@@ -47,14 +47,50 @@
 # roll_no = int(input("Enter roll no to check: "))
 # attendance_status(roll_no)
 
-a = "Kunal"
-b = "Kunal"
+# =====================================================================================================================
+# Write a Python function to find the maximum of three numbers.
+# def find_max_num(a,b,c):
+#     """
+#
+#     :param a:
+#     :param b:
+#     :param c:
+#     :return:maximum number from three numbers
+#
+#     """
+#     if a > b and a > c:
+#         return a
+#     if b > a and b > c:
+#         return b
+#     if c > a and c > a:
+#         return c
+#
+#
+# print(find_max_num(76,123,87))
 
-print(id(a))
-print(id(b))
+# ====================================================================================================================
+# Write a Python function to sum all the numbers in a list.
+# Sample List : (8, 2, 3, 0, 7)
+# Expected Output : 20
 
-lis1 = [10,20,30]
-lis2 = [10,20,30]
+# def sum_nums(*args):
+#     sum = 0
+#     for i in args:
+#         sum += i
+#     print(sum)
+#
+# sum_nums(8,2,3,0,7)
 
-print(id(lis1))
-print(id(lis2))
+# ======================================================================================================================
+# Write a Python function that takes a number as a parameter and checks whether the number is prime or not.
+# Note : A prime number (or a prime) is a natural number greater than 1 and
+# that has no positive divisors other than 1 and itself.
+# def find_number(n):
+#     for i in range(2,n):
+#         if n % i ==0:
+#             print("This number is not prime")
+#             break
+#     else:
+#         print("This is number is prime")
+
+# find_number(7)

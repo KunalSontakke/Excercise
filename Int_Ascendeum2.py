@@ -1,7 +1,7 @@
 """
 1)Open "https://mathup.com/games/crossbit?mode=championship"
 2) Click on Play Button
-3) Count How much time it take to laod page in seconds for 10 times
+3) Count How much time it take to load page in seconds for 10 times
 4)count Average time from 10 counts.
 
 

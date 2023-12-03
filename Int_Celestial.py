@@ -10,7 +10,6 @@
 """
 
 
-
 """Find all duplicate character of a string “iworkatcelestialsystems” Given any string,
 the script should find all the duplicate  characters which are similar to each other
  and print the character.

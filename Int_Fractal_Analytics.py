@@ -1,13 +1,13 @@
-# """
-# 1) Sprint Ceremonies
-# 2) Priority and Severity
-# 3) High Priority and low Severity
-# 4) High Severity and low Priority
-# 5) Defect Lie Cycle
-# 6) what suggestions given in Sprint meetings
-# """
-#
-# # =================================================================================================
+"""
+1) Sprint Ceremonies
+2) Priority and Severity
+3) High Priority and low Severity
+4) High Severity and low Priority
+5) Defect Lie Cycle
+6) what suggestions given in Sprint meetings
+"""
+
+# =================================================================================================
 from collections import Counter
 #
 """Display the duplicate letters in string and print the occurrence of the letters"""

@@ -40,9 +40,9 @@ print(rev_inp)
 
 # OR
 
-non_zeros = [i for i in input_array if i!=0]
+non_zeros = [i for i in input_array if i != 0]
 zeros = [0] * (len(input_array) - len(non_zeros))
-oup = non_zeros +zeros
+oup = non_zeros + zeros
 print(oup)
 
 # ======================================================================================================================

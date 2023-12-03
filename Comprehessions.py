@@ -164,18 +164,6 @@ prime_nos = [i for i in numbers if i % i == 0 and i % 1 == i]
 print(prime_nos)
 
 
-# . Write a Python program to sum all the items in a list
-def sum_list(lis):
-    sum = 0
-    for i in lis:
-        sum = sum + i
-
-    print(sum)
-
-
-lis = [1, 1, 2, 5, 8, -5]
-sum_list(lis)
-
 # Write a Python program to count the number of strings from a given list of strings.
 # The string length is 2 or more and the first and last characters are the same.
 # Sample List : ['abc', 'xyz', 'aba', '1221']
@@ -184,10 +172,10 @@ sum_list(lis)
 
 List = ['abc', 'xyz', 'aba', '1221']
 count = 0
-
+#
 for i in List:
     if len(i) > 1 and i[0] == i[-1]:
-        print(i, end=",")
+        print(i,end=",")
         count = count + 1
 
 print("\ncount of string is", count)

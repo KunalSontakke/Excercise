@@ -21,3 +21,13 @@ for i in range(2,501):
         count += 1
 print("count of prime numbers is",count)
 
+
+num = int(input("Enter number :"))
+prime_nos = []
+for i in range(1,num):
+    for j in range(2,i):
+        if i %j == 0:
+            break
+    else:
+        prime_nos.append(i)
+print(prime_nos)

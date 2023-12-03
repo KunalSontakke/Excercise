@@ -5,7 +5,7 @@
 4) *args and **kwargs
 5) append and extend
 6) PEP 8
-7)can we create class without instance variable
+7) can we create class without instance variable
 
 """
 
