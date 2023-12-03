@@ -117,7 +117,7 @@
 # # Write a Python program to check if value 200 exists in the following dictionary.
 # #
 # Sample_dict = {'a': 100, 'b': 200, 'c': 300}
-# #
+
 # # expected_output = "200 present in a dict"
 #
 # for i in Sample_dict:
@@ -179,14 +179,19 @@ import operator
 #
 # dic = {'a':103,'b':34,'c':45,'d':67,'e':87}
 # # Sort the dictionary using keys
-# sort_dict = sorted(dic.items(),key=lambda x:x[1])
+# sort_dict = sorted(dic.items(),key=lambda x:x[0])
+
+
+"""The lambda item: item[0] specifies that the sorting should be done based on the first element of each tuple (the keys)."""
 # print(sort_dict)
-#
-# #
+
+# ======================================================================================================================
 # # sort the dictionary using values
-# sort_dic = sorted(dic.items(),key=operator.itemgetter(1))
+# sort_dic = sorted(dic.items(),key=lambda x : x[1])
+
+"""The lambda item: item[1] specifies that the sorting should be done based on the second element of each tuple (the values)."""
 # print(sort_dic)
-#
+
 # my_dict = {'b': 2, 'a': 1, 'c': 3}
 # sorted_dict = sorted(my_dict.items())
 #
@@ -368,27 +373,27 @@ print(max(my_dict.keys(), key=(lambda k: my_dict[k])))
 # print(sort_dic_value)
 
 # =====================================================================================================================
-# input_dict = {'Ethernet1/4': ['10G', '25G', '40G', '100G'],
-#               'Ethernet1/5': ['10G'],
-#               'Ethernet1/6': ['100G']
-#
-#               }
+input_dict = {'Ethernet1/4': ['10G', '25G', '40G', '100G'],
+              'Ethernet1/5': ['10G'],
+              'Ethernet1/6': ['100G']
+
+              }
 #
 # output_dict = {'10G': ['Ethernet1/4', 'Ethernet1/5'],
 #                '25G': ['Ethernet1/5'],
 #                '40G': ['Ethernet1/4'],
 #                '100G': ['Ethernet1/4', 'Ethernet1/6']
 #                }
-# output = {}
-# # Iterate through the input dictionary
-# for interface, speeds in input_dict.items():
-#     # Iterate through the speeds for each interface
-#     for speed in speeds:
-#         if speed not in output:
-#             output[speed] = []  # Initialize the list if speed is not in the output dictionary
-#         output[speed].append(interface)
+output = {}
+# Iterate through the input dictionary
+for interface, speeds in input_dict.items():
+    # Iterate through the speeds for each interface
+    for speed in speeds:
+        if speed not in output:
+            output[speed] = []  # Initialize the list if speed is not in the output dictionary
+        output[speed].append(interface)
 #
-# print(output)
+print(output)
 # # ======================================================================================================================
 """
 1. Write a Python script to sort (ascending and descending) a dictionary by value.
@@ -450,7 +455,7 @@ print(max(my_dict.keys(), key=(lambda k: my_dict[k])))
 # ======================================================================================================================
 
 """
- Write a Python program to check whether a given key already exists in a dictionary.
+Write a Python program to check whether a given key already exists in a dictionary.
 
 Sample Output
 

@@ -60,7 +60,7 @@ print(result(5))
 
 def ret_numbers(n):
     for i in n:
-        yield (i ** 2)
+        yield i ** 2
 
 
 cubes = ret_numbers([2, 6, 1, 9, 5])

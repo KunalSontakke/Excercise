@@ -21,7 +21,6 @@
 # def function():
 #     return "hello world"
 
-
 # print(function())
 
 # =====================================================================================================================
@@ -239,3 +238,62 @@ from selenium.webdriver.support.select import Select
 #
 # print(pri_num(inp))
 
+# ======================================================================================================================
+
+# Write a Python program to create a decorator that logs the arguments and return value of a function.The decorator
+# in this code logs the function name, arguments, and return value whenever the decorated function is called
+
+# def logs_function(func):
+#     def wrapper(*args,**kwargs):
+#         print(f"calling function {func.__name__} with args {args},kwargs {kwargs}")
+#
+#         result = func(*args,**kwargs)
+#
+#         print(f"{func.__name__} returned {result}")
+#
+#         return result
+#     return wrapper
+#
+#
+# @logs_function
+# def addition(a,b):
+#     return a + b
+#
+#
+# print(addition(3,4))
+
+# ======================================================================================================================
+# Write a Python program to create a decorator to convert the return value of a function to a specified data type
+# def show_data_type(data_type):
+#     def decorator(func):
+#         def wrapper(*args,**kwargs):
+#             result = func(*args,**kwargs)
+#             return data_type(result)
+#         return wrapper
+#     return decorator
+#
+# @show_data_type(str)
+# def func(x,y):
+#     return x + y
+#
+# result = func(10,20)
+# print(type(result))
+
+def measure_exec_time(func):
+    def wrapper(*args):
+        start_time = time.time()
+        end_time = time.time()
+        exec_time = end_time - start_time
+        if args is not None:
+            result = func(*args)
+        else:
+            result = func()
+        print(f"{func.__name__} has taken {exec_time} in seconds")
+        return result
+    return wrapper
+
+@measure_exec_time
+def print_num(a):
+    return a
+
+print(print_num(12))
