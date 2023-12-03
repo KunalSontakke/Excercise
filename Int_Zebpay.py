@@ -1,3 +1,27 @@
+"""
+1. How to create cookie for login and if multiple login cookies then store there into dictionary.
+"""
+import requests
+
+# Perform login and get cookies
+login_url = 'https://example.com/login'  # Replace with your login URL
+credentials = {'username': 'your_username', 'password': 'your_password'}  # Replace with actual credentials
+
+# Perform the login request
+response = requests.post(login_url, data=credentials)
+
+# Get the cookies from the response
+cookies = response.cookies
+
+# Store the cookies in a variable or container (e.g., list or dictionary)
+# For a single cookie
+single_cookie = cookies.get('cookie_name')
+
+# If multiple cookies are present, you can store them in a dictionary
+all_cookies = {cookie.name: cookie.value for cookie in cookies}
+
+# =====================================================================================================================
+
 # """
 # +12,100
 #

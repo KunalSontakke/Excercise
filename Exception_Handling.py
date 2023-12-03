@@ -102,7 +102,7 @@
 # Raised when a Unicode-related error occurs during decoding. It is a subclass of UnicodeError.
 
 try:
-    with open ("C:\Users\Kunal\PycharmProjects\Excercise\Text","r") as file:
+    with open ("/Data/Text", "r") as file:
         print(file.read())
 
 except UnicodeDecodeError as e:
