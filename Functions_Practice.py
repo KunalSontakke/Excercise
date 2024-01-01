@@ -94,3 +94,68 @@
 #         print("This is number is prime")
 
 # find_number(7)
+
+"""12. Write a Python function that checks whether a passed string is a palindrome or not. """
+
+
+def check_palindrome(string):
+    if string == string[::-1]:
+        print(f"{string} is palindrome")
+    else:
+        print(f"{string} is not palindrome")
+
+
+check_palindrome("madam")
+
+# ==================================================================================================================
+"""Write a Python program that accepts a hyphen-separated sequence of words as input and prints the words in a hyphen-separated
+ sequence after sorting them alphabetically.
+
+Sample Items : green-red-yellow-black-white
+Expected Result : black-green-red-white-yellow"""
+
+# def reverse_strings(inp):
+#     items = [item for item in inp.split("-")]
+#     print(items)
+
+    # print("-".join(items))
+
+# inp = input("Enter the items : ")
+# reverse_strings(inp)
+
+# ===================================================================================================================
+""" Write a Python function to create and print a list where the values are the squares of numbers between 1 and 30 (both included)."""
+def create_list():
+    sqres = [i**2 for i in range(1,31)]
+    return sqres
+
+
+print(create_list())
+
+# ======================================================================================================================
+"""Write a Python program to create a chain of function decorators (bold, italic, underline etc.)."""
+# def make_bold(func):
+#     def wrapper():
+#         return "<b>" + func() + "</b>"
+#     return wrapper
+#
+# def make_italic(func):
+#     def wrapper():
+#         return "<i>" + func() + "</i>"
+#     return wrapper
+#
+# def make_underline(func):
+#     def wrapper():
+#         return "<u>" + func() + "</u>"
+#     return wrapper
+#
+# @make_bold
+# @make_italic
+# @make_underline
+# def show_something():
+#     return "something"
+
+# print(show_something())
+
+# ====================================================================================================================
+

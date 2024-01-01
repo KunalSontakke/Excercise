@@ -116,3 +116,59 @@ ABCDE
 #     for j in range(1,i+1):
 #         print(chr(64+j),end=" ")
 #     print()
+
+
+
+""""
+A
+A B
+A B C
+A B C D
+A B C D E
+
+"""
+import math
+
+for i in range(6):
+    for j in range(1,i+1):
+        print(chr(64+j),end=" ")
+    print()
+
+"""
+[4:02 PM] ManuSingh Sikarwar
+A
+
+BB
+
+CCC
+
+DDDD
+
+EEEEE
+
+"""
+for i in range(1,6):
+    print(chr(64+i) * i)
+print()
+
+# =====================================================================================================================
+
+class Circle:
+    pi = math.pi
+
+    # def __init__(self,radius):
+    #     self.radius = radius
+    # def area(self):
+    #     return  * self.radius ** 2
+    def show_pi_value(cls):
+        print(cls.pi)
+
+circle = Circle()
+circle.show_pi_value()
+
+
+def show_details(name,age):
+    print(name)
+    print(age)
+
+

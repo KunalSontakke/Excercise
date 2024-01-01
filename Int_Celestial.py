@@ -1,6 +1,12 @@
 """
 1) Project Structure
 2) Pytest Framework/ Fixture
+
+Fixtures are functions, which will run before each test function to which it is applied.
+Fixtures are used to feed some data to the tests such as database connections, URLs to test and some sort of input data.
+Therefore, instead of running the same code for every test, we can attach fixture function to the tests and it will run and
+return the data to the test before executing each test.
+
 3) Switching frames
 4) API questions
 5) POST and Put difference
@@ -8,7 +14,6 @@
 7) difference between Regression And Retesting
 
 """
-
 
 """Find all duplicate character of a string “iworkatcelestialsystems” Given any string,
 the script should find all the duplicate  characters which are similar to each other
@@ -24,17 +29,16 @@ duplicate_chars = []
 for i in strng_inp:
     if strng_inp.count(i) > 1:
         if i not in duplicate_chars:
-           duplicate_chars.append(i)
+            duplicate_chars.append(i)
 
 print("".join(duplicate_chars))
-
 
 # Approach 2 (using Empty String)
 duplicate = ""
 for i in strng_inp:
-    if strng_inp.count(i)>1:
+    if strng_inp.count(i) > 1:
         if i not in duplicate:
-            duplicate +=i
+            duplicate += i
 print(duplicate)
 
 # ========================================================================================================
@@ -44,18 +48,16 @@ print(duplicate)
 Ex: [30,15, 25, 20,5]
 Output: second Largest number is 25"""
 
-input = [30,15,25,20,5]
+input = [30, 15, 25, 20, 5]
 # sorting list using nested loops
 for i in range(0, len(input)):
     for j in range(i + 1, len(input)):
         if input[i] >= input[j]:
             input[i], input[j] = input[j], input[i]
-for i in  range(1,len(input)):
-    print(input[i],end=",")
+for i in range(1, len(input)):
+    print(input[i], end=",")
 #
-print("the second largest number is ",input[-2])
-
-
+print("the second largest number is ", input[-2])
 
 """In the Gregorian calendar, three conditions are used to identify leap years:
  
@@ -65,7 +67,6 @@ The year is also evenly divisible by 400. Then it is a leap year.
 This means that in the Gregorian calendar, the years 2000 and 2400 are leap years, while 1800, 1900, 2100, 2200, 2300 and 2500 are NOT leap years.
  
 Given a year, determine whether it is a leap year. If it is a leap year, return the Boolean True, otherwise return False."""
-
 
 # def find_leap_year(year):
 #     leap = False
@@ -104,4 +105,3 @@ for i in range(0, len(l1)):
 [9,12,23,45,54,76]
 
 """
-

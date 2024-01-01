@@ -17,7 +17,7 @@ and how it facilitates testing activities within the project.
 3. Highlight Key Features:
 
     Automation Capabilities: Explain how the framework supports test automation and its ability to reduce manual effort.
-    Scalability and Reusability: Emphasize the scalability and reusability of test scripts or components within the framework across different modules or projects.
+    Scalability and Reliability: Emphasize the scalability and re-usability of test scripts or components within the framework across different modules or projects.
     Reporting and Analysis: Discuss the framework's reporting capabilities and how it facilitates result analysis and defect tracking.
 
 4. Framework Implementation:

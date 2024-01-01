@@ -46,4 +46,11 @@ import json
 
 # ======================================================================================================================
 # Write a Python program to convert Python dictionary object (sort by key) to JSON data. Print the object members with indent level 4.
+import json
+data = '{"name":"kunal","lastname":"sontakke"}'
 
+json_data = json.loads(data)
+print(type(json_data))
+
+dump_data = json.dumps(data)
+print(type(dump_data))

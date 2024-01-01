@@ -10,6 +10,190 @@
 #     Exercise 9: Replace list’s item with new value if found
 #     Exercise 10: Remove all occurrences of a specific item from a list.
 # """
+"""
+Comprehensions in Python provide us with a short and concise way to construct new sequences
+(such as lists, sets, dictionaries, etc.) using previously defined sequences.
+Comprehension in Python converts the four to five lines of code into a one-liner.
+
+"""
+# 1) list Comprehension
+
+listA = []
+for i in range(50):
+    if i % 5 == 0:
+        listA.append(i)
+print(listA)
+
+# OR
+
+listA = [i for i in range(50) if i % 5 == 0]
+print(listA)
+
+# 2) Dictionary Comprehension
+Normaldict = {
+    0: "item0",
+    1: "item1",
+    2: "item2",
+    3: "item3",
+    4: "item4",
+}
+Compdict = {i: Normaldict[i] for i in range(5)}
+print(Compdict)
+
+Comp_dict = {key: value for key, value in Normaldict.items()}
+print(Comp_dict)
+
+# Find all the numbers from 1-1000 that are divisible by 7
+list7 = [i for i in range(1, 1001) if i % 7 == 0]
+print(list7)
+
+# ======================================================================================================================
+
+
+# Find all the numbers from 1-1000 that have a 3 in them
+list3 = [i for i in range(1, 1001) if "3" in str(i)]
+
+# ======================================================================================================================
+
+# Create a list of all the consonants in the string
+# “Yellow Yaks like yelling and yawning, and yesterday they yodeled while eating yucky yams”
+
+stri = "Yellow Yaks like yelling and yawning and yesterday they yodeled while eating yucky yams"
+
+consonents = [i for i in stri.split() if i not in 'aeiouAEIOU']
+print("consonants in strings are", consonents)
+
+# ======================================================================================================================
+
+# Get the index and the value as a tuple for items in the list “hi”, 4, 8.99, ‘apple’, (‘t,b’,’n’).
+# Result would look like (index, value), (index, value)
+
+lst = ["hi", 4, 8.99, "apple", ("t", "b", "n")]
+result = [(index, value) for index, value in enumerate(lst)]
+print(result)
+
+# ======================================================================================================================
+
+listA, listB = [1, 2, 3, 4], [2, 3, 4, 5]
+
+common_items = [i for i in listA for j in listB if i == j]
+print("common items are", common_items)
+
+# ======================================================================================================================
+
+# Get only the numbers in a sentence like
+# ‘In 1984 there were 13 instances of a protest with over 1000 people attending’
+string = "In 1984 there were 13 instances of a protest with over 1000 people attending"
+str_spl = string.split()
+numbers = [i for i in str_spl if i.isdigit()]
+print(numbers)
+
+# ======================================================================================================================
+
+# Given numbers = range(20), produce a list containing the word ‘even’ if a number in the numbers is even,
+# and the word ‘odd’ if the number is odd. Result would look like ‘odd’,’odd’, ‘even’
+nos = ["even" if i % 2 == 0 else "odd" for i in range(20)]
+print(nos)
+
+# Produce a list of tuples consisting of only the matching numbers in these lists
+list_a = 1, 2, 3, 4, 5, 6, 7, 8, 9,
+list_b = 2, 7, 1, 12
+# Result would look like (4,4), (12,12)
+match_no = [(i,j) for i in list_a for j in list_b if i == j]
+print(match_no)
+
+# Exercise 1 - rewrite the above example code using list comprehension syntax.
+# Make a variable named upper cased_fruits to hold the output of the list comprehension.
+# Output should be ['MANGO', 'KIWI']
+fruits = ['mango', 'kiwi', 'strawberry', 'guava', 'pineapple', 'mandarin orange']
+
+fruit = [i.upper() for i in fruits]
+print(fruit)
+
+# Exercise 2 - create a variable named capitalized_fruits and use list comprehension syntax
+# to produce output like ['Mango', 'Kiwi', 'Strawberry', etc...]
+capitalized_fruits = [i.capitalize() for i in fruits]
+print(capitalized_fruits)
+
+# Exercise 5 - make a list that contains each fruit with more than 5 characters
+lst1 = [i for i in fruits if len(i) > 5]
+print(lst1)
+
+# Exercise 6 - make a list that contains each fruit with exactly 5 characters
+lst2 = [i for i in fruits if len(i) == 5]
+print(lst2)
+
+# Exercise 7 - Make a list that contains fruits that have less than 5 characters
+lst3 = [i for i in fruits if len(i) < 5]
+print(lst3)
+
+# Exercise 8 - Make a list containing the number of characters in each fruit. Output would be [5, 4, 10, etc... ]
+lst4 = [len(i) for i in fruit]
+print(lst4)
+
+# Exercise 9 - Make a variable named fruits_with_letter_a that contains a list of only the fruits that contain the
+# letter "a"
+a_letter_fruit = [i for i in fruits if "a" in i]
+print(a_letter_fruit)
+
+numbers = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 13, 17, 19, 23, 256, -8, -4, -2, 5, -9]
+
+# Exercise 10 - Make a variable named even_numbers that holds only the even numbers
+even_numb = [i for i in numbers if i % 2 == 0]
+print(even_numb)
+
+# Exercise 11 - Make a variable named odd_numbers that holds only the odd numbers
+odd_numb = [i for i in numbers if i % 2 == 1]
+print(odd_numb)
+
+# Exercise 12 - Make a variable named positive_numbers that holds only the positive numbers
+positive_numb = [i for i in numbers if i > 0]
+print(positive_numb)
+
+# Exercise 13 - Make a variable named negative_numbers that holds only the negative numbers
+negative_numb = [i for i in numbers if i < 0]
+print(negative_numb)
+
+# Exercise 14 - use a list comprehension w/ a conditional in order to produce a list of numbers with 2 or more numerals
+numb1 = [i for i in numbers if len(str(i)) >= 2 and i > 0]
+print(numb1)
+
+
+# Exercise 15 - Make a variable named numbers_squared that contains the numbers list with each element squared.
+# Output is [4, 9, 16, etc...]
+numb_sqr = [i ** 2 for i in numbers]
+print(numb_sqr)
+
+# Exercise 16 Make a variable named odd_negative_numbers that contains only the numbers that are both odd and negative.
+odd_neg = [i for i in numbers if i % 2 == 1 and i < 0]
+print(odd_neg)
+
+# Exercise 17 - Make a variable named numbers_plus_5. In it, return a list containing each number plus five.
+numbers_plus_5 = [i + 5 for i in numbers]
+print(numbers_plus_5)
+
+prime_nos = [i for i in numbers if i % i == 0 and i % 1 == i]
+print(prime_nos)
+
+
+# Write a Python program to count the number of strings from a given list of strings.
+# The string length is 2 or more and the first and last characters are the same.
+# Sample List : ['abc', 'xyz', 'aba', '1221']
+# Expected Result : 2
+
+#
+# List = ['abc', 'xyz', 'aba', '1221']
+# count = 0
+# #
+# for i in List:
+#     if len(i) > 1 and i[0] == i[-1]:
+#         print(i,end=",")
+#         count = count + 1
+#
+# print("\ncount of string is", count)
+
+
+
 #
 # # Exercise 1: Reverse a list in Python
 # lis = [12, 45, 23, 64, 73, 87, 98]
@@ -1083,3 +1267,270 @@ inp = [[1, 3], [5, 7], [1, 11], [1, 15, 7]]
 #     print(sum)
 #
 # find_max_sum()
+
+# =====================================================================================================================
+"""
+Write a Python program to Zip two given lists of lists.
+Original lists:
+[[1, 3], [5, 7], [9, 11]]
+[[2, 4], [6, 8], [10, 12, 14]]
+Zipped list:
+[[1, 3, 2, 4], [5, 7, 6, 8], [9, 11, 10, 12, 14]]
+
+# """
+# lis1 = [[1, 3], [5, 7], [9, 11]]
+# lis2 = [[2, 4], [6, 8], [10, 12, 14]]
+#
+# lis3 = zip(lis1,lis2)
+# print(list(lis3))
+
+# =====================================================================================================================
+"""
+ Write a Python program to count the number of lists in a given list of lists.
+Original list:
+[[1, 3], [5, 7], [9, 11], [13, 15, 17]]
+Number of lists in said list of lists:
+4
+Original list:
+[[2, 4], [[6, 8], [4, 5, 8]], [10, 12, 14]]
+Number of lists in said list of lists:
+3
+
+"""
+# lis1 = [[1, 3], [5, 7], [9, 11], [13, 15, 17]]
+# count = 0
+# for i in lis1:
+#     count += 1
+
+# print("No of lists in said list of list is",count)
+
+# ===========================================================================================
+""" Write a Python program to find a list with maximum and minimum lengths.
+Original list:
+[[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]]
+List with maximum length of lists:
+(3, [13, 15, 17])
+List with minimum length of lists:
+(1, [0])
+Original list:
+[[0], [1, 3], [5, 7], [9, 11], [3, 5, 7]]
+List with maximum length of lists:
+(3, [3, 5, 7])
+List with minimum length of lists:
+(1, [0])
+Original list:
+[[12], [1, 3], [1, 34, 5, 7], [9, 11], [3, 5, 7]]
+List with maximum length of lists:
+(4, [1, 34, 5, 7])
+List with minimum length of lists:
+(1, [12])"""
+
+# lis = [[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]]
+# print("list with maximum length of lists",max(lis,key=len))
+# print("list with minimum length of lists",min(lis,key=len))
+#
+# # or
+#
+# max_length = max(len(i) for i in lis)
+# min_length = min(len(i) for i in lis)
+#
+# print(max_length)
+# print(min_length)
+#
+# print(max_length,":",[lst for lst in lis if len(lst) == max_length])
+# print(min_length,":",[lst for lst in lis if len(lst) == min_length])
+
+# =====================================================================================================================
+"""Write a Python program to compute average of two given lists.
+Original list:
+[1, 1, 3, 4, 4, 5, 6, 7]
+[0, 1, 2, 3, 4, 4, 5, 7, 8]
+Average of two lists:
+3.823529411764706
+"""
+
+# lis1 = [1, 1, 3, 4, 4, 5, 6, 7]
+# sum = 0
+
+# for i in lis1:
+#     sum += i
+
+# print("average of list is",sum/len(lis1))
+
+# =====================================================================================================================
+"""Write a Python program to find the item with the most occurrences in a given list.
+Original list:
+[2, 3, 8, 4, 7, 9, 8, 2, 6, 5, 1, 6, 1, 2, 3, 4, 6, 9, 1, 2]
+Item with maximum occurrences of the said list:
+2"""
+
+# lis1 = [2, 3, 8, 4, 7, 9, 8, 2, 6, 5, 1, 6, 1, 2, 3, 4, 6, 9, 1, 2]
+# max_iter = 0
+# max_item = 0
+# for i in lis1:
+#     if lis1.count(i) > max_iter:
+#         max_iter = lis1.count(i)
+#         max_item = i
+# print("Item with maximum occurrence of said list",max_item)
+#
+
+# =====================================================================================================================
+"""Write a Python program to access multiple elements at a specified index from a given list.
+Original list:
+[2, 3, 8, 4, 7, 9, 8, 2, 6, 5, 1, 6, 1, 2, 3, 4, 6, 9, 1, 2]
+Index list:
+[0, 3, 5, 7, 10]
+Items with specified index of the said list:
+[2, 4, 9, 2, 1]
+"""
+# lis1 = [2, 3, 8, 4, 7, 9, 8, 2, 6, 5, 1, 6, 1, 2, 3, 4, 6, 9, 1, 2]
+# index = [0, 3, 5, 7, 10]
+#
+# print([lis1[i] for i in index])
+
+"""
+Write a Python program to remove all elements from a given list that are present in another list.
+Original lists:
+list1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+list2: [2, 4, 6, 8]
+Remove all elements from 'list1' present in 'list2:
+[1, 3, 5, 7, 9, 10]
+
+"""
+# list1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# list2 = [2, 4, 6, 8]
+# for i in list2:
+#     list1.remove(i)
+# print(list1)
+
+# ====================================================================================================================
+"""Write a Python program to find the difference between elements (n+1th - nth) of a given list of numeric values.
+Original list:
+[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+Difference between elements (n+1th - nth) of the said list :
+[1, 1, 1, 1, 1, 1, 1, 1, 1]
+Original list:
+[2, 4, 6, 8]
+Difference between elements (n+1th - nth) of the said list :
+[2, 2, 2]"""
+
+# lis1 =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# res = []
+# for i in range(len(lis1)-1):
+#     diff = lis1[i+1] - lis1[i]
+#     res.append(diff)
+
+# print(res)
+
+# ====================================================================================================================
+"""
+Write a Python program to find common elements in a nested list.
+Original lists:
+[[12, 18, 23, 25, 45], [7, 12, 18, 24, 28], [1, 5, 8, 12, 15, 16, 18]]
+Common element(s) in nested lists:
+[18, 12]
+"""
+# lis1 = [[12, 18, 23, 25, 45], [7, 12, 18, 24, 28], [1, 5, 8, 12, 15, 16, 18]]
+# common_elements = lis1[0]
+#
+# for sublist in lis1[1:]:
+#     common_elements = [i for i in common_elements if i in sublist]
+# print(common_elements)
+
+# ========================================================================================
+"""Write a function that takes two lists as input and returns a new list that contains only the
+ unique elements from both lists in sorted order.
+
+Example:
+
+python
+
+list1 = [3, 7, 12, 9, 15]
+list2 = [8, 7, 9, 22, 15]
+
+# Output: [3, 7, 8, 9, 12, 15, 22]
+"""
+# list1 = [3, 7, 12, 9, 15]
+# list2 = [8, 7, 9, 22, 15]
+# res = []
+# for i in list1:
+#    res.append(i)
+# for j in list2:
+#     if j not in res:
+#         res.append(j)
+# print(res)
+#
+# or
+#
+# lis = list1 + list2
+# print(list(set(lis)))
+
+# ==================================================================
+"""input_list = [3, 7, 4, 9, 5, 3, 7, 9, 8]
+
+# Output: [3, 7, 4, 9, 5, 8]
+"""
+# input_list = [3, 7, 4, 9, 5, 3, 7, 9, 8]
+#
+# res = []
+#
+# for i in input_list:
+#     if i not in res:
+#         res.append(i)
+#
+# print(res)
+
+# ===========================================================================
+"""Write a Python function that extracts numbers (integers and floats) from a given list of mixed data types.
+
+Example:
+
+python
+
+mixed_list = [1, 5.6, 'apple', 9, 'orange', 3.14, True, 7]
+
+# Output: [1, 5.6, 9, 3.14, 7"""
+
+# mixed_list = [1, 5.6, 'apple', 9, 'orange', 3.14, True, 7]
+
+# out = [i for i in mixed_list if isinstance(i,(int,float))]
+# print(out)
+
+# =====================================================================================================
+"""Write a function that finds the contiguous subarray within a list that has the largest sum of its elements
+and returns that sum.
+
+arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+ Output: 6 (The contiguous subarray [4, -1, 2, 1] has the largest sum: 6)
+"""
+# arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+
+# ====================================================================================================
+"""matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+ Output: 
+ [
+    [1, 4, 7],
+    [2, 5, 8],
+    [3, 6, 9]
+ ]
+"""
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+# Transpose the matrix
+transposed_matrix = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+print(transposed_matrix)
+
+# Print the transposed matrix
+for row in transposed_matrix:
+    print(row)
+

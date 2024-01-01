@@ -1,6 +1,14 @@
 """
 1) Dynamic Typing
 2) __name__ = __main__
+
+In Python, the __name__ variable is a special variable that holds the name of the current module.
+When a Python script is executed, Python assigns the __name__ variable different values depending on how the script is being run:
+
+If a Python script is being run as the main program (i.e., directly executed), the __name__ variable is set to '__main__'.
+If a Python script is imported as a module into another script, the __name__ variable is set to the name of the module
+(i.e., the filename without the '.py' extension).
+
 3) Split Functions
 4) Web scrapping
 5) Delete Cookies
@@ -67,7 +75,7 @@ print(mySum(10, 20))
 # driver.find_element(By.XPATH,"//*[text()='__text']")
 
 # ======================================================================================================================
-"""webscrapping in python" 
+"""web scrapping in python" 
 - Let’s suppose you want to get some information from a website? Let’s say an article from the website or some news article,
   what will you do? The first thing that may come in your mind is to copy and paste the information into your local media. 
   But what if you want a large amount of data on a daily basis and as quickly as possible.
@@ -84,7 +92,7 @@ read = requests.get("https://www.geeksforgeeks.org/python-programming-language/"
 
 print(read.content)
 
-with open('file.txt', 'w') as f:
+with open('Data/file.txt', 'w') as f:
     f.write(read.text)
 
 """There are several ways to store the contents of web scraping using Selenium with Python into a file"""

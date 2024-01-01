@@ -60,9 +60,6 @@ strings = input("enter string : ")
 result = strings[0].upper() + strings[1:-1] + strings[-1].upper()
 print(result)
 
-# list = [12,3,4,5,6,7,2]
-# list.copy()
-
 # ===================================================================================
 
 """check anagram of two words"""
@@ -87,5 +84,4 @@ for index in range(len(inputs)):
         rev_str = rev_str + inputs[index].upper()
 
 print(rev_str)
-
 # ====================================================================================

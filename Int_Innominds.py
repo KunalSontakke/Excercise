@@ -39,7 +39,7 @@ Here are some strategies to make a framework dynamic:
     A dynamic framework should ensure that changes don’t introduce unexpected errors or issues.
 
 
-8.suppose element locators are changing dynamically.How can we overcome this situation in our testing frame work
+8.suppose element locators are changing dynamically.How can we overcome this situation in our testing framework
     When element locators are changing dynamically, it can be a challenge for automated testing as the tests rely on these locators to interact with the elements on the page. To overcome this situation,
     you can employ several strategies in your testing framework:
 

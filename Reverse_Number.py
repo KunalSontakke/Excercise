@@ -1,7 +1,3 @@
-
-
-
-
 num = 1234
 reverse_num = 0
 while num != 0:

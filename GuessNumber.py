@@ -1,7 +1,7 @@
 import random
 
 
-def guess(x):
+def guess_number(x):
     random_number = random.randint(1, x)
     guess = 0
     while guess != random_number:
@@ -15,4 +15,5 @@ def guess(x):
     print(f"Yay....You have guess the number {guess} correctly")
 
 
-guess(100)
+guess_number(100)
+

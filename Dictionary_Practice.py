@@ -321,10 +321,10 @@ import operator
 
 # ================================================================================================
 # Write a Python program to get the maximum and minimum values of a dictionary.
-my_dict = {'x': 500, 'y': 5874, 'z': 560}
+# my_dict = {'x': 500, 'y': 5874, 'z': 560}
 
-print(min(my_dict.keys(), key=(lambda k: my_dict[k])))
-print(max(my_dict.keys(), key=(lambda k: my_dict[k])))
+# print(min(my_dict.keys(), key=(lambda k: my_dict[k])))
+# print(max(my_dict.keys(), key=(lambda k: my_dict[k])))
 #
 # # ================================================================================
 # # Write a Python program to get a dictionary from an object's fields.
@@ -551,4 +551,240 @@ Convert Two List to Dict = {'One' : 1, 'Two' : 2, 'Three' : 3, 'Four' : 4, 'Five
 # print(dic)
 
 # =====================================================================================================================
+"""
+dict1 = {'a': 1, 'b': 2, 'c': 3}
+dict2 = {'b': 3, 'c': 4, 'd': 5}
 
+Output: {'a': 1, 'b': [2, 3], 'c': [3, 4], 'd': 5}
+"""
+# dict1 = {'a': 1, 'b': 2, 'c': 3}
+# dict2 = {'b': 3, 'c': 4, 'd': 5}
+# res = {}
+# for key,value in dict1.items():
+#     if key in dict2:
+#         res[key] = [value,dict2[key]]
+#     else:
+#         res[key] = value
+#
+# for key,value in dict2.items():
+#     if key not in dict1:
+#         res[key] = value
+#
+# print(res)
+
+# ===================================================================================================
+"""
+data = [
+    {'name': 'Alice', 'age': 25},
+    {'name': 'Bob', 'age': 30},
+    {'name': 'Charlie', 'age': 25}
+]
+
+Output: {25: [{'name': 'Alice', 'age': 25}, {'name': 'Charlie', 'age': 25}], 30: [{'name': 'Bob', 'age': 30}]}
+"""
+# data = [
+#     {'name': 'Alice', 'age': 25},
+#     {'name': 'Bob', 'age': 30},
+#     {'name': 'Charlie', 'age': 25}
+# ]
+# res = {}
+# for person in data:
+#     age = person['age']
+#     if age not in res:
+#         res[age] = [person]
+#     else:
+#         res[age].append(person)
+#
+# print(res)
+
+# ==============================================================================================
+"""
+text = "Hello world! This is a hello world example, world."
+
+# Output: {'hello': 2, 'world': 3, 'this': 1, 'is': 1, 'a': 1, 'example': 1}
+
+"""
+# text = "Hello world ! This is a hello world example , world ."
+# text_lower = text.lower()
+# frequency = {}
+# for i in text_lower.split():
+#     if i.isalnum():
+#         if i not in frequency:
+#             frequency[i] = 1
+#
+#         else:
+#             frequency[i] += 1
+#
+# print(frequency)
+
+# ========================================================================================
+"""nested_dict = {
+    'a': 1,
+    'b': {
+        'x': 2,
+        'y': {
+            'p': 3,
+            'q': 4
+        }
+    },
+    'c': 5
+}
+
+# Output: {'a': 1, 'b_x': 2, 'b_y_p': 3, 'b_y_q': 4, 'c': 5}
+"""
+# nested_dict = {
+#     'a': 1,
+#     'b': {
+#         'x': 2,
+#         'y': {
+#             'p': 3,
+#             'q': 4
+#         }
+#     },
+#     'c': 5
+# }
+# res = {}
+
+
+# ====================================================================================================================
+"""Write a Python program to verify that all values in a dictionary are the same.
+Original Dictionary:
+{'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12}
+Check all are 12 in the dictionary.
+True
+Check all are 10 in the dictionary.
+False"""
+
+# dic = {'Cierra Vega': 12, 'Alden Cantrell': 12, 'Kierra Gentry': 12, 'Pierre Cox': 12}
+# inp = input("Enter input : ")
+# result = all(inp == x for x in dic.values())
+# print(result)
+
+# ===============================================================================================================
+""" Write a Python program to remove a specified dictionary from a given list.
+Original list of dictionary:
+[{'id': '#FF0000', 'color': 'Red'}, {'id': '#800000', 'color': 'Maroon'}, {'id': '#FFFF00', 'color': 'Yellow'}, {'id': '#808000', 'color': 'Olive'}]
+Remove id #FF0000 from the said list of dictionary:
+[{'id': '#800000', 'color': 'Maroon'}, {'id': '#FFFF00', 'color': 'Yellow'}, {'id': '#808000', 'color': 'Olive'}]"""
+
+# lis = [{'id': '#FF0000', 'color': 'Red'}, {'id': '#800000', 'color': 'Maroon'}, {'id': '#FFFF00', 'color': 'Yellow'}, {'id': '#808000', 'color': 'Olive'}]
+# key = "#FF0000"
+# for i in lis:
+#     if i['id'] == key:
+#         i.pop(key)
+#
+# print(lis)
+
+# lis = [i for i in lis if i['id'] != key]
+# print(lis)
+
+# =====================================================================================================================
+"""Write a Python program to filter a dictionary based on values.
+Original Dictionary:
+{'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190}
+Marks greater than 170:
+{'Cierra Vega': 175, 'Alden Cantrell': 180, 'Pierre Cox': 190}"""
+
+# dic = {'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190}
+# marks = int(input("Enter marks : "))
+# res = {}
+# for name,mark in dic.items():
+#     if mark > marks:
+#         res[name] = mark
+# print(res)
+#
+# # or
+# out = {key:value for key,value in dic.items() if value > marks}
+# print(out)
+
+# ====================================================================================================================
+"""Write a Python program to convert more than one list to a nested dictionary.
+Original strings:
+['S001', 'S002', 'S003', 'S004']
+['Adina Park', 'Leyton Marsh', 'Duncan Boyle', 'Saim Richards']
+[85, 98, 89, 92]
+Nested dictionary:
+[{'S001': {'Adina Park': 85}}, {'S002': {'Leyton Marsh': 98}}, {'S003': {'Duncan Boyle': 89}}, {'S004': {'Saim Richards': 92}}"""
+
+# id = ['S001', 'S002', 'S003', 'S004']
+# names = ['Adina Park', 'Leyton Marsh', 'Duncan Boyle', 'Saim Richards']
+# marks = [85, 98, 89, 92]
+#
+# out = []
+# for i,j,k in zip(id,names,marks):
+#     temp_dict = {i:{j:k}}
+#     out.append(temp_dict)
+# print(out)
+#
+# # or
+#
+# print([{i:{j:k}} for i,j,k in zip(id,names,marks)])
+
+
+# =====================================================================================================================
+""" 
+Write a Python program to filter the height and width of students, which are stored in a dictionary.
+Original Dictionary:
+{'Cierra Vega': (6.2, 70), 'Alden Cantrell': (5.9, 65), 'Kierra Gentry': (6.0, 68), 'Pierre Cox': (5.8, 66)}
+Height > 6ft and Weight> 70kg:
+{'Cierra Vega': (6.2, 70)}
+
+# """
+# dic = {'Cierra Vega': (6.2, 70), 'Alden Cantrell': (5.9, 65), 'Kierra Gentry': (6.0, 68), 'Pierre Cox': (5.8, 66)}
+# height = int(input("height : "))
+# weight = int(input("weight : "))
+#
+# res = {key:value for key,value in dic.items() if value[0] > height and value[1] > weight}
+# print(res)
+#
+# # or
+# for key,value in dic.items():
+#     if value[0] > height:
+#         if value[1] > weight:
+#             print(key,":",value)
+
+#         else:
+#            print(f"{height},{weight} is not present")
+#            break
+
+# =====================================================================================================================
+""" A Python dictionary contains List as a value. Write a Python program to clear the list values in the said dictionary.
+Original Dictionary:
+{'C1': [10, 20, 30], 'C2': [20, 30, 40], 'C3': [12, 34]}
+Clear the list values in the said dictionary:
+{'C1': [], 'C2': [], 'C3': []}
+
+"""
+# dic = {'C1': [10, 20, 30], 'C2': [20, 30, 40], 'C3': [12, 34]}
+# for key, value in dic.items():
+#     dic[key].clear()
+# print(dic)
+
+# ======================================================================================================================
+"""A Python Dictionary contains List as a value. Write a Python program to update the list values in the said dictionary.
+Original Dictionary:
+{'Math': [88, 89, 90], 'Physics': [92, 94, 89], 'Chemistry': [90, 87, 93]}
+Update the list values of the said dictionary:
+{'Math': [89, 90, 91], 'Physics': [90, 92, 87], 'Chemistry': [90, 87, 93]}"""
+
+# dic = {'Math': [88, 89, 90], 'Physics': [92, 94, 89], 'Chemistry': [90, 87, 93]}
+
+# dic['Math'][2] = 91
+# dic['Physics'][2] = 87
+
+# print(dic)
+
+# ======================================================================================================================
+"""Write a Python program to find the specified number of maximum values in a given dictionary.
+Original Dictionary:
+{'a': 5, 'b': 14, 'c': 32, 'd': 35, 'e': 24, 'f': 100, 'g': 57, 'h': 8, 'i': 100}
+1 maximum value(s) in the said dictionary:
+['f']
+2 maximum value(s) in the said dictionary:
+['f', 'i']
+5 maximum value(s) in the said dictionary:
+['f', 'i', 'g', 'd', 'c']"""
+dic = {'a': 5, 'b': 14, 'c': 32, 'd': 35, 'e': 24, 'f': 100, 'g': 57, 'h': 8, 'i': 100}
+
+sort_dic = dict(sorted(dic.items(),key= lambda x : x[1]))
+print(sort_dic)

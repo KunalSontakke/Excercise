@@ -14,10 +14,10 @@ for i in sorted_values:
 print(sorted_dict)
 
 # sort the dictionary using values
-sorted_dic = sorted(dict1.items(), key=operator.itemgetter(1))
+sorted_dic = dict(sorted(dict1.items(),key= lambda x:x[1]))
+print(sorted_dic)
 
 """how will be two mandatory and two optional parameter in function"""
-
 
 def sum(a, b, c=None, d=None):
     return a + b + c + d

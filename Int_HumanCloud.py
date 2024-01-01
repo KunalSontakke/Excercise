@@ -5,6 +5,36 @@
 4) Story point
 5) Sprint Framework Ceremonies
 6) New changes introduced in project
+
+    Assess the Impact: Evaluate the impact of the new changes on the current sprint goals and commitments.
+    Determine if the changes are critical and align with the sprint objectives.
+    Consider the potential benefits versus the disruption they might cause.
+
+    Prioritization: If the new changes are deemed necessary for the sprint, prioritize them alongside the existing sprint backlog items.
+    Discuss with the team to understand the importance and urgency of the changes compared to the existing work.
+
+    Collaboration and Team Discussion: Hold discussions with the development team, Scrum Master, and stakeholders to collectively decide on how to handle the new changes.
+    This discussion should include potential impacts on existing sprint goals, workload, and achievable outcomes.
+
+    Adjusting the Sprint Backlog: If the new changes are accommodated, reevaluate the sprint backlog.
+    Adjust priorities and tasks as needed, considering the team's capacity and the sprint duration.
+
+    Communication: Transparent and clear communication is vital. Inform stakeholders, team members, and affected parties about the introduction of new changes.
+    Clearly articulate how these changes will impact the current sprint and set realistic expectations.
+
+    Adaptation and Flexibility: Embrace Agile principles of adaptability. Agile methodologies encourage responding to change over rigidly following a plan.
+    If new changes are necessary and aligned with project goals, adapt the sprint plan accordingly.
+
+    Mitigating Risks: Identify any risks associated with introducing new changes mid-sprint.
+    Assess the potential impact on sprint goals, quality, and delivery timelines.
+    Develop strategies to mitigate these risks and maintain sprint stability.
+
+    Documentation and Tracking: Ensure that all changes made during the sprint are well-documented.
+    Update sprint boards, task lists, and any related documentation to reflect the changes made and keep everyone aligned.
+
+    Continuous Improvement: Use retrospectives at the end of the sprint to reflect on how the introduction of new changes impacted the team's performance and sprint outcomes.
+    Learn from the experience to improve future sprint planning and handling of changes.
+
 7) difference between Query and Path Parameter
 8) API Status Code
 9) Difference between Bug and Defect

@@ -42,7 +42,6 @@ y = [4, 5, 6, 7, 8]
 # Using dictionary comprehension to create dictionary
 output = {x[i]: y[i] for i in range(len(x))}
 
-print(output)
 
 # ==========================================================================
 """Decorators"""
@@ -53,22 +52,22 @@ print(output)
   The decorator `sqr_num()` creates a new function `wrapper()` which wraps the original function, 
   and computes the square of its return value. When the decorated function is called, `wrapper()` is called instead, 
   which in turn calls the original function with the arguments passed to it, and then squares the result."""
-
-
-def sqr_num(func):
-    def wrapper():
-        x = func()
-        return x * x
-
-    return wrapper
-
-
-@sqr_num
-def print_num():
-    return 10
-
-
-print(print_num())
+#
+#
+# def sqr_num(func):
+#     def wrapper():
+#         x = func()
+#         return x * x
+#
+#     return wrapper
+#
+#
+# @sqr_num
+# def print_num():
+#     return 10
+#
+#
+# print(print_num())
 
 # =============================================================
 """what is Map function ?
@@ -81,30 +80,30 @@ print(print_num())
   
 """
 
-number = [1, 2, 3, 4, 5]
-
-
-def sqr_num(i):
-    return i * i
+# number = [1, 2, 3, 4, 5]
+#
+#
+# def sqr_num(i):
+#     return i * i
 
 
 # map function with function
-op = map(sqr_num, number)
-print(list(op))
-
-# map with module level function
-outp = map(math.sqrt, number)
-print(list(outp))
-
-# map with lambda function
-outp1 = map(lambda i: i * 2, number)
-print(list(outp1))
-
-# 3) Set Comprehensions
-# set = {set for set in ["a","b","c","a","b","b","c"]}
-# print(set)
-alpha = {alpha for alpha in ["a", "a", "b", "c", "d", "d"]}
-print(alpha)
+# op = map(sqr_num, number)
+# print(list(op))
+#
+# # map with module level function
+# outp = map(math.sqrt, number)
+# print(list(outp))
+#
+# # map with lambda function
+# outp1 = map(lambda i: i * 2, number)
+# print(list(outp1))
+#
+# # 3) Set Comprehensions
+# # set = {set for set in ["a","b","c","a","b","b","c"]}
+# # print(set)
+# alpha = {alpha for alpha in ["a", "a", "b", "c", "d", "d"]}
+# print(alpha)
 
 """what is filter function ?
 - The filter() method filters the given sequence with the help of a function 
@@ -115,22 +114,22 @@ print(alpha)
 
 
 # function that filters vowels
-def fun(variable):
-    letters = ['a', 'e', 'i', 'o', 'u']
-    if (variable in letters):
-        return True
-    else:
-        return False
+# def fun(variable):
+#     letters = ['a', 'e', 'i', 'o', 'u']
+#     if (variable in letters):
+#         return True
+#     else:
+#         return False
 
 
 # sequence
-sequence = ['g', 'e', 'e', 'j', 'k', 's', 'p', 'r']
-
-# using filter function
-filtered = filter(fun, sequence)
-
-print('The filtered letters are:')
-for s in filtered:
-    print(s)
-
-
+# sequence = ['g', 'e', 'e', 'j', 'k', 's', 'p', 'r']
+#
+# # using filter function
+# filtered = filter(fun, sequence)
+#
+# print('The filtered letters are:')
+# for s in filtered:
+#     print(s)
+#
+#

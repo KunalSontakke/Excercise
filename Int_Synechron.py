@@ -53,7 +53,7 @@ from collections import Counter
 
 my_array = [1, 2, 3, 2, 3, 4, 3, 4, 5, 6, 7, 5, 8, 9, 7, 9]
 
-# 3.Pass the array to the Counter() function of the collectionmodule.It will create a dictionary
+# 3.Pass the array to the Counter() function of the collection module.It will create a dictionary
 # with elements as keys and their count as values.
 
 result = Counter(my_array)

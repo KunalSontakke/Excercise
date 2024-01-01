@@ -279,21 +279,132 @@ from selenium.webdriver.support.select import Select
 # result = func(10,20)
 # print(type(result))
 
-def measure_exec_time(func):
+# ======================================================================================================================
+# def measure_exec_time(func):
+#     def wrapper(*args):
+#         start_time = time.time()
+#         end_time = time.time()
+#         exec_time = end_time - start_time
+#         if args is not None:
+#             result = func(*args)
+#         else:
+#             result = func()
+#         print(f"{func.__name__} took {exec_time} seconds")
+#         return result
+#     return wrapper
+#
+# @measure_exec_time
+# def show_details():
+#     dic = {"name":"kunal","company":"calsoft"}
+#     return dic
+#
+#
+# print(show_details())
+
+# Write a Python program to create a decorator that logs the arguments and return value of a function.The decorator
+# in this code logs the function name, arguments, and return value whenever the decorated function is called
+
+# =====================================================================================================================
+"""Logger Decorator:
+Create a decorator that logs the function name, its arguments, and the return value every time a function is called
+"""
+
+
+def logger(func):
     def wrapper(*args):
-        start_time = time.time()
-        end_time = time.time()
-        exec_time = end_time - start_time
         if args is not None:
             result = func(*args)
         else:
             result = func()
-        print(f"{func.__name__} has taken {exec_time} in seconds")
+        print(f"{func.__name__} has returned {result} with {args}")
+
         return result
+
     return wrapper
 
-@measure_exec_time
-def print_num(a):
+
+@logger
+def show_details(a):
     return a
 
-print(print_num(12))
+
+print(show_details(29))
+
+"""
+Implement a memoization decorator that caches the results of a function call and returns the cached result when the
+same inputs occur again.
+"""
+
+def memoization(func):
+    cache = {}
+
+    def wrapper(*args, **kwargs):
+        key = (args, frozenset(kwargs.items()))
+        if key not in cache:
+            cache[key] = func(*args)
+        return cache[key]
+
+    return wrapper
+
+
+@memoization
+def addition(a,b):
+    return a + b
+
+print(addition(3,5))
+
+# =====================================================================================================================
+"""
+Write a decorator that measures and prints the time taken by a function to execute.
+
+"""
+# def measure_exec_time(func):
+#     def wrapper(*args):
+#         start_time = time.time()
+#         end_time = time.time()
+#         exec_time = end_time - start_time
+#         print(f"{func.__name__} has taken {exec_time} seconds")
+#         return func(args)
+#     return wrapper
+
+# @measure_exec_time
+# def fibonaci(n):
+#     if n < 0:
+#         return 0
+#     elif n == 0:
+#         return 1
+#     if n > 1:
+#         return fibonaci(n-1) + fibonaci(n-2)
+#
+#
+# print(fibonaci(5))
+
+# ====================================================================================================
+"""Retry Decorator:
+Implement a decorator that retries executing a function a certain number of times if it raises a specific exception.
+"""
+
+
+def retry_Decorator(max_retries, exception, delay=1):
+    def decorator(func):
+        def wrapper(*args):
+            retries = 0
+            while retries < max_retries:
+                try:
+                    return func(*args)
+                except exception as e:
+                    print(e)
+                    retries += 1
+                    time.sleep(delay)
+            raise RuntimeError(f"{func.__name__} has failed after {max_retries} tries")
+
+        return wrapper
+    return decorator
+
+
+@retry_Decorator(3,ZeroDivisionError,delay=1)
+def divide_num(a,b):
+    return a / b
+
+
+print(divide_num(4,0))

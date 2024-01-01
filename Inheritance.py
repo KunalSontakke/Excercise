@@ -1,6 +1,5 @@
-
-class Dad :
-    def __init__(self ,PIN):
+class Dad:
+    def __init__(self, PIN):
         self.PIN = PIN
 
     def hobby(self):
@@ -12,6 +11,7 @@ class Dad :
     def mobile(self):
         print("Nokia 3310")
 
+    @staticmethod
     def account_balance(self):
         print("balance is 250000")
 
@@ -21,6 +21,7 @@ class Dad :
             print("You have 2,50,000 into your account")
         else:
             print("You have entered Wrong PIN.Please try again")
+
     @property
     def Account(self):
         return self.PIN
@@ -55,10 +56,12 @@ class Son(Dad):
     def mobile(self):
         print("Realme")
 
+
 class grandson(Son):
     def __init__(self):
         super().__init__()
         print("grandon is initiated")
+
     def hobby(self):
         print("reading comics")
 
@@ -71,6 +74,8 @@ obj3.Account()
 
 # ====================================================================================================================
 """Can we create baseclass without object"""
+
+
 class empty:
     pass
 
@@ -84,6 +89,7 @@ print(person.name)
 print(person.age)
 print(person.gender)
 
+
 class person:
     def __init__(self):
         print("I am initiated")
@@ -95,13 +101,17 @@ class person:
 person()
 person.print_details
 
+
 class Dad:
     def __init__(self):
         print("Dad is Initiated")
+
     def hobby(self):
         print("Reading NewsPaper")
+
     def hobby(self):
         print("Watching TV")
+
     def hobby(self):
         print("Jogging")
 
@@ -110,15 +120,18 @@ class Papa:
     def bike(self):
         print("Hero Passion Plus")
 
+
 class Beta(Papa):
     def bike(self):
         super().bike()  # in method riding,childclass overrides baseclass method.but super class inherites method
-                          # from baseclass
+        # from baseclass
         print("KTM Duke 250")
+
 
 obj = Papa()
 obj1 = Beta()
 obj1.bike()
+
 
 class baseclass:
     def __init__(self):
@@ -126,14 +139,16 @@ class baseclass:
         self.__acct_no = 1234
 
     def name(self):
-        print("my name is " ,self._name)
+        print("my name is ", self._name)
 
     def acct_no(self):
-        print("my account no is" ,self._acct_no)
+        print("my account no is", self._acct_no)
 
 
 object = baseclass()
 object.name()
+
+
 # object.acct_no()
 #
 # class childClass(baseclass):
@@ -149,17 +164,16 @@ object.name()
 
 class one:
     def __init__(self):
-        print("id of self is" ,id(self))
+        print("id of self is", id(self))
 
     def print(self):
         print("I'll be printed")
 
 
 obj5 = one()
-print("id of object5 is" ,id(obj5))
+print("id of object5 is", id(obj5))
 obj6 = one()
-print("id of object6 is" ,id(obj6))
-
+print("id of object6 is", id(obj6))
 
 
 class father:
@@ -192,34 +206,33 @@ son.property_statement()
 
 
 class Camera:
-  def __init__(self,pixels):
-      self.pixels = pixels
+    def __init__(self, pixels):
+        self.pixels = pixels
 
-  def click_picture(self):
-      print("clicks HD Quality images")
+    def click_picture(self):
+        print("clicks HD Quality images")
 
-  def record_video(self):
-      print("records HD Videos")
+    def record_video(self):
+        print("records HD Videos")
 
 
 class Mobile(Camera):
-    def __init__(self,pixels,mobile_no):
+    def __init__(self, pixels, mobile_no):
         self.mobile_no = mobile_no
         super.__init__(pixels)
 
     def call(self):
-        print("calling",self.mobile_no)
+        print("calling", self.mobile_no)
 
     def message(self):
-        print("sending message",self.mobile_no)
+        print("sending message", self.mobile_no)
 
     def click_picture(self):
         super().click_picture()
-        print("clicks UHD Quality Image",self.pixels)
+        print("clicks UHD Quality Image", self.pixels)
 
 
 mobile = Mobile('9765383888')
 mobile.call()
 mobile.record_video()
 mobile.click_picture()
-

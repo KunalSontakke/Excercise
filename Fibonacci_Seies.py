@@ -40,3 +40,17 @@ if __name__ == "__main__":
     print(fibona(6))
 
 
+def find_fibonacci_series(n):
+    fibonacci_series = []
+    if n < 0:
+        return fibonacci_series
+    if n == 0:
+        fibonacci_series.append(0)
+    else:
+        fibonacci_series = [0,1]
+        for i in range(2,n):
+            next_term = fibonacci_series[i-1] + fibonacci_series[i-2]
+            fibonacci_series.append(next_term)
+    return fibonacci_series
+
+print(find_fibonacci_series(9))

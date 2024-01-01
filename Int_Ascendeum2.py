@@ -39,6 +39,6 @@ while count != 10:
     count = count + 1
     sum = sum + load_time
 driver.close()
-print("Average time to load",sum /10 ,"seconds")
+print("Average time to load",sum /10,"seconds")
 
 

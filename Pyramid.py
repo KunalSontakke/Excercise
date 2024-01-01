@@ -162,3 +162,4 @@ for i in range(1, rows + 1):
         print(j % 2 + 1, end=" ")
     print()
 
+
