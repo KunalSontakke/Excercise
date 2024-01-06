@@ -16,6 +16,8 @@ Comprehensions in Python provide us with a short and concise way to construct ne
 Comprehension in Python converts the four to five lines of code into a one-liner.
 
 """
+import selenium
+
 # 1) list Comprehension
 
 listA = []
@@ -458,13 +460,13 @@ num6 = [2, 3, 2, 4, 7, 8]
 #
 # # ===================================================================================================
 # Write a Python program to create a list by concatenating a given list with a range from 1 to n.
-# Sample_list3 = ['p', 'q']
-# n =5
+Sample_list3 = ['p', 'q']
+n =5
 # Sample Output : ['p1', 'q1', 'p2', 'q2', 'p3', 'q3', 'p4', 'q4', 'p5', 'q5']
 # n = int(input("Enter the range : "))
-# op = [['p'+str(i),'q'+str(i)] for i in range(1,n+1)]
-#
-# print(op)
+op = [['p'+str(i),'q'+str(i)] for i in range(1,n+1)]
+
+print(op)
 #
 # # ==================================================================================================
 # #  Write a Python program to find missing and additional values in two lists.
@@ -528,7 +530,7 @@ num6 = [2, 3, 2, 4, 7, 8]
 # # ==========================================================================================
 # # Write a Python program to convert a pair of values into a sorted unique array.
 # # Original_List=  [(1, 2), (3, 4), (1, 2), (5, 6), (7, 8), (1, 2), (3, 4), (3, 4), (7, 8), (9, 10)]
-# # # Sorted Unique Data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# # Sorted Unique Data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 #
 # # sin = []
 # # for i in Original_List:
@@ -1530,7 +1532,6 @@ matrix = [
 transposed_matrix = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
 print(transposed_matrix)
 
-# Print the transposed matrix
-for row in transposed_matrix:
-    print(row)
+
+
 

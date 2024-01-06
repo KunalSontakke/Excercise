@@ -38,10 +38,7 @@ try:
 except ZeroDivisionError as e:
     print("Can't be divided by Zero",e)
 
-
-
-
-
+# ======================================================================================================
 string = "television"
 res = ""
 

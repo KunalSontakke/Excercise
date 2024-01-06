@@ -1,6 +1,13 @@
 """
 1) Try and Except and Finally
+
+Try and Except statement is used to handle these errors within our code in Python.The try block is used to
+check some code for errors i.e the code inside the try block will execute when there is no error in the program.
+Whereas the code inside the except block will execute whenever the program encounters some error in the preceding try block.
+
 2) Method Over riding and method overloading
+
+
 3) Raise Exception
 
 """

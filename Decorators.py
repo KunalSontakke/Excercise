@@ -115,19 +115,6 @@ To use this decorator, we can annotate our methods that interact with dropdowns:
 
 # =============================================================================================================
 
-# def decor_sqr(func):
-#     def wrapper():
-#         x = func()
-#         return x * x
-#     return wrapper
-#
-# @decor_sqr
-# def func():
-#     return 10
-#
-# print(func())
-#
-#
 # def addition(var1,var2):
 #     def decorator(func):
 #         def wrapper(*args):
@@ -335,6 +322,7 @@ Implement a memoization decorator that caches the results of a function call and
 same inputs occur again.
 """
 
+
 def memoization(func):
     cache = {}
 
@@ -348,38 +336,14 @@ def memoization(func):
 
 
 @memoization
-def addition(a,b):
+def addition(a, b):
     return a + b
 
-print(addition(3,5))
+
+print(addition(3, 5))
 
 # =====================================================================================================================
-"""
-Write a decorator that measures and prints the time taken by a function to execute.
 
-"""
-# def measure_exec_time(func):
-#     def wrapper(*args):
-#         start_time = time.time()
-#         end_time = time.time()
-#         exec_time = end_time - start_time
-#         print(f"{func.__name__} has taken {exec_time} seconds")
-#         return func(args)
-#     return wrapper
-
-# @measure_exec_time
-# def fibonaci(n):
-#     if n < 0:
-#         return 0
-#     elif n == 0:
-#         return 1
-#     if n > 1:
-#         return fibonaci(n-1) + fibonaci(n-2)
-#
-#
-# print(fibonaci(5))
-
-# ====================================================================================================
 """Retry Decorator:
 Implement a decorator that retries executing a function a certain number of times if it raises a specific exception.
 """
@@ -399,12 +363,13 @@ def retry_Decorator(max_retries, exception, delay=1):
             raise RuntimeError(f"{func.__name__} has failed after {max_retries} tries")
 
         return wrapper
+
     return decorator
 
 
-@retry_Decorator(3,ZeroDivisionError,delay=1)
-def divide_num(a,b):
+@retry_Decorator(3, ZeroDivisionError, delay=1)
+def divide_num(a, b):
     return a / b
 
 
-print(divide_num(4,0))
+print(divide_num(4, 0))

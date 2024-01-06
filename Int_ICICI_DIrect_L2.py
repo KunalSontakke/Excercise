@@ -4,8 +4,6 @@
 3) HTML
 """
 
-
-
 """python program to display Maximum frequency character in String"""
 
 

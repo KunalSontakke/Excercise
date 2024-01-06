@@ -27,6 +27,7 @@ whenever object has no reference/has no use then it is stored in "Garbage Collec
 #         super().__init__self
 
 #     def salary(self):
+#         super().salary()
 #         print("salary of Son is",self.x==self.z+self.x)
 
 # Son = son(10000)

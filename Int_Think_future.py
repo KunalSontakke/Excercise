@@ -1,5 +1,5 @@
 """
-1) Implicit wait,Explicit wait and time.sleep
+1) Implicit wait,Explicit wait and time.sleep()
     Implicit wait is a setting applied globally to the WebDriver instance.
     It instructs the WebDriver to wait for a certain amount of time for an element to be present or become available before throwing a NoSuchElementException.
     The wait is applied automatically to all subsequent commands after it has been set, and it remains active for the entire lifespan of the WebDriver object.
@@ -55,10 +55,10 @@ For efficient and reliable test automation, it's recommended to use Explicit wai
 
     TimeoutException:
         TimeoutException is thrown when a command or action does not complete within the specified time limit.
-        For example, it occurs when an element does not appear or become interactable within the expected timeout while using explicit waits.
+        For example, it occurs when an element does not appear or become intractable within the expected timeout while using explicit waits.
 
     ElementNotVisibleException:
-        This exception occurs when an element is present in the DOM but is not visible or interactable on the web page.
+        This exception occurs when an element is present in the DOM but is not visible or intractable on the web page.
         It may occur due to the element being hidden, covered by another element, or not in the viewport.
 
     ElementNotIntractableException:

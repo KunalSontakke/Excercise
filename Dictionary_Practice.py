@@ -230,7 +230,6 @@ import operator
 # ==========================================================================
 # Write a Python program to check whether a given key already exists in a dictionary.
 #
-#
 # def check_key(dic, key):
 #     if key in dic:
 #         return True

@@ -28,7 +28,6 @@ while count != 10:
     driver.find_element(By.XPATH,"//div[@class='GamePostStart_desktop-view-prestart__RK3F2']"
                                  "//div[contains(@class,'GamePreStart_btn__S9w8W btn')][normalize-space()='Play']").click()
 
-
     open_time = time()
 
     driver.execute_script("return document.readyState == 'complete'")

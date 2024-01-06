@@ -17,6 +17,8 @@ print(sorted_dict)
 sorted_dic = dict(sorted(dict1.items(),key= lambda x:x[1]))
 print(sorted_dic)
 
+sort
+
 """how will be two mandatory and two optional parameter in function"""
 
 def sum(a, b, c=None, d=None):
