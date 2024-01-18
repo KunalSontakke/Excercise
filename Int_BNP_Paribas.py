@@ -21,23 +21,27 @@ time.sleep(3)
 
 # button.click()
 
-driver.execute_script("window.scrollBy(0,document.body.scrollHeight)","")
+driver.execute_script("window.scrollBy(0,document.body.scrollHeight)", "")
 
 time.sleep(3)
+
 
 class father:
     def intro(self):
         print("I am father")
 
+
 class mom(father):
     def intro(self):
         print("I am mom")
+
 
 class son(mom):
     def intro(self):
         father.intro(self)
         print("I am son")
-#
+
+
 #
 Son = son()
 Son.intro()
@@ -48,7 +52,6 @@ Son.intro()
 # with open("Data/Text","r") as file:
 #     data = file.read()
 #     print(data)
-
 
 
 # import requests

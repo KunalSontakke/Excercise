@@ -2,7 +2,7 @@
 1) Smoke and Regression
 Smoke Testing:
 
-Smoke testing is a testing technique that is used to check the basic functionalityof a software application or
+Smoke testing is a testing technique that is used to check the basic functionality of a software application or
 system after a build or release.This testing is done to ensure that the build is stable enough for further testing.
 Smoke testing involves a quick and shallow check of the software application to verify that it is functioning properly
 and that there are no critical defects that could prevent further testing.Smoke testing is typically performed by

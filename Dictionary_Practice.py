@@ -685,11 +685,11 @@ Marks greater than 170:
 {'Cierra Vega': 175, 'Alden Cantrell': 180, 'Pierre Cox': 190}"""
 
 # dic = {'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190}
-# marks = int(input("Enter marks : "))
+# mark = int(input("Enter marks : "))
 # res = {}
-# for name,mark in dic.items():
-#     if mark > marks:
-#         res[name] = mark
+# for names,marks in dic.items():
+#     if marks > mark:
+#         res[names] = marks
 # print(res)
 #
 # # or
@@ -783,7 +783,11 @@ Original Dictionary:
 ['f', 'i']
 5 maximum value(s) in the said dictionary:
 ['f', 'i', 'g', 'd', 'c']"""
-dic = {'a': 5, 'b': 14, 'c': 32, 'd': 35, 'e': 24, 'f': 100, 'g': 57, 'h': 8, 'i': 100}
-
-sort_dic = dict(sorted(dic.items(),key= lambda x : x[1]))
-print(sort_dic)
+# dic = {'a': 5, 'b': 14, 'c': 32, 'd': 35, 'e': 24, 'f': 100, 'g': 57, 'h': 8, 'i': 100}
+# res = []
+# inp = int(input("number :"))
+# for i in range(inp):
+#     max_element = max(dic.items(),key= lambda x: x[1])
+#     dic.pop(max_element[0])
+#     res.append(max_element[0])
+# print(res)

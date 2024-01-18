@@ -1,11 +1,11 @@
 import json
 # Write a Python program to convert JSON data to Python object
-# json_obj = '{"name":"kunal","lastname":"sontakke","company":"calsoft","address":"Nagpur"}'
-
-# pyth_obj = json.loads(json_obj)
-# print(pyth_obj)
-# print(pyth_obj['name'])
-# print(pyth_obj['address'])
+json_obj = '{"name":"kunal","lastname":"sontakke","company":"calsoft","address":"Nagpur"}'
+#
+pyth_obj = json.loads(json_obj)
+print(pyth_obj)
+print(pyth_obj['name'])
+print(pyth_obj['address'])
 
 # ======================================================================================================================
 # Write a Python program to convert JSON data to Python object

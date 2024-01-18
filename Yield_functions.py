@@ -27,6 +27,7 @@ def inf_sequence():
         yield num
         num += 1
 
+
 for i in inf_sequence():
     print(i, end="\n")
 
@@ -35,6 +36,7 @@ for i in inf_sequence():
 def fun(n):
     for i in range(n):
         yield i
+
 
 f = fun(10)
 print(f.__next__())
@@ -47,8 +49,6 @@ print(f.__next__())
 print(f.__next__())
 print(f.__next__())
 print(f.__next__())
-
-
 
 """
 Advantages of using Generators
@@ -63,7 +63,7 @@ Advantages of using Generators
     They can also be used to pipeline a number of operations
 """
 
-lis = ["apple","banana","mango","grapes","orange"]
+lis = ["apple", "banana", "mango", "grapes", "orange"]
 print(lis)
 lis_iter = iter(lis)
 print(lis_iter)
@@ -72,7 +72,3 @@ print(next(lis_iter))
 print(next(lis_iter))
 print(next(lis_iter))
 print(next(lis_iter))
-
-
-
-

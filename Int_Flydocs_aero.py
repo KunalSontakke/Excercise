@@ -40,10 +40,10 @@ from selenium.webdriver.chrome.service import Service
 service_obj = Service(
     "C:\\Users\\Kunal\\PycharmProjects\\Selenium_project\\Selenium_Projects\\Drivers\\chromedriver_win32\\chromedriver.exe")
 driver = webdriver.Chrome(service=service_obj)
-
-driver.get("https://www.geeksforgeeks.org/")
-print(driver.get_cookie("foo"))
-driver.delete_cookie("foo")
+#
+# driver.get("https://www.geeksforgeeks.org/")
+# print(driver.get_cookie("foo"))
+# driver.delete_cookie("foo")
 
 # =======================================================================================================================
 
@@ -56,9 +56,9 @@ like list or tuples or we can use asterisk operator * for packing. """
 num1 = 1
 num2 = 2
 num3 = 3
-*num, = num1, num2, num3
+num = num1, num2, num3
 
-print(*num)
+print(num)
 
 
 def mySum(*args):
@@ -88,12 +88,12 @@ print(mySum(10, 20))
 
 import requests
 
-read = requests.get("https://www.geeksforgeeks.org/python-programming-language/")
+# read = requests.get("https://www.geeksforgeeks.org/python-programming-language/",verify=False)
 
-print(read.content)
+# print(read.content)
 
-with open('Data/file.txt', 'w') as f:
-    f.write(read.text)
+# with open('Data/file.txt', 'w') as f:
+#     f.write(read.text)
 
 """There are several ways to store the contents of web scraping using Selenium with Python into a file"""
 

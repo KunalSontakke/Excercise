@@ -7,7 +7,7 @@ class agilion:
 
 
 def show_module_name():
-    print("mdule name is",__name__)
+    print("module name is",__name__)
 
 
 if __name__ == "main":

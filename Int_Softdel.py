@@ -48,9 +48,9 @@ Sure, here are some test scenarios for LinkedIn, the professional networking pla
 
 # """
 # 1)Base POM
-# - element lovators
+# - element locators
 # 2)
-# REST API Cleint
+# REST API Client
 # - REst API
 # 3)Configuration
 # -config

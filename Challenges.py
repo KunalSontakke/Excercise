@@ -12,7 +12,7 @@
 #     if i % 7 == 0 and i % 5 != 0:
 #         print(i,end=",")
 #         count = count + 1
-print("\ncount of such numbers is",count)
+# print("\ncount of such numbers is",count)
 #
 # ======================================================================================================================
 #

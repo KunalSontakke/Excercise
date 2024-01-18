@@ -865,7 +865,7 @@ import random
 # print(out)
 
 # ======================================================================================================================
-# Write a Python program to extract specified size of strings from a give list of string values.
+# Write a Python program to extract specified size of strings from a given list of string values.
 # Original list:
 # ['Python', 'list', 'exercises', 'practice', 'solution']
 # length of the string to extract:
@@ -1495,7 +1495,7 @@ mixed_list = [1, 5.6, 'apple', 9, 'orange', 3.14, True, 7]
 
 # mixed_list = [1, 5.6, 'apple', 9, 'orange', 3.14, True, 7]
 
-# out = [i for i in mixed_list if isinstance(i,(int,float))]
+# out = [i for i in mixed_list if isinstance(i,(int,float)) and not isinstance(i,bool)]
 # print(out)
 
 # =====================================================================================================
@@ -1522,16 +1522,16 @@ arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
     [3, 6, 9]
  ]
 """
-matrix = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-]
-
-# Transpose the matrix
-transposed_matrix = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
-print(transposed_matrix)
-
-
-
-
+# matrix = [
+#     [1, 2, 3],
+#     [4, 5, 6],
+#     [7, 8, 9]
+# ]
+#
+# # Transpose the matrix
+# transposed_matrix = [[matrix[j][i] for j in range(len(matrix))] for i in range(len(matrix[0]))]
+# print(transposed_matrix)
+#
+#
+#
+#

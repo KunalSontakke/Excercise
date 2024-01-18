@@ -96,9 +96,8 @@
 # # Result is: 11
 #
 # count = 0
-# for i in Input2:
-#     if i in Input2:
-#         count = count + 1
+# for i in Input2::
+#      count = count + 1
 #
 # print("\n",count)
 #
@@ -396,10 +395,10 @@
 #             return inp.upper()
 #         else:
 #             return inp
-#
-#
+
+
 # inp = input("Enter string : ")
-#
+
 # print(upp_str(inp))
 
 # =========================================================================================

@@ -12,15 +12,20 @@ from collections import Counter
 #
 """Display the duplicate letters in string and print the occurrence of the letters"""
 input = "mississipi"
-dup_char = []
-for i in input:
-    if input.count(i) >1:
-        result = Counter(input)
-        if i not in dup_char:
-            dup_char.append(i)
-print("".join(dup_char))
 
-# # ==================================================================================================
+freq = {}
+for i in input:
+    if i not in freq:
+        freq[i] = 1
+    else:
+        freq[i] += 1
+
+for letter,count in freq.items():
+    if count> 1:
+        print(letter,":",count)
+
+
+# ==================================================================================================
 #
 string = "I am from Maharashtra"
 output = "I ma morf arthsarahaM"
@@ -39,10 +44,6 @@ for i in b:
 # Salary.salary = (select max(salary) from Salary);
 #
 # # select case(when 1=1 then 'Y' else 'N' end) from tableName;
-#
-#
 
-
-#
 
 

@@ -9,7 +9,6 @@
 
 """
 
-
 mul = lambda a,b : a * b
 print(mul(4,5))
 
