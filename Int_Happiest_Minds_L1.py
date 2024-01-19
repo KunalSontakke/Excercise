@@ -46,12 +46,12 @@ def sqr_cube_decoartor(func):
     return wrapper
 
 
-@sqr_cube_decoartor
+# @sqr_cube_decoartor
 def print_num(num):
     return num
 
 
 ip = int(input("Enter the number"))
-
+print_num = sqr_cube_decoartor(print_num)
 print(print_num(ip))
 
