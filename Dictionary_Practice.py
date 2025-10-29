@@ -372,27 +372,27 @@ import operator
 # print(sort_dic_value)
 
 # =====================================================================================================================
-input_dict = {'Ethernet1/4': ['10G', '25G', '40G', '100G'],
-              'Ethernet1/5': ['10G'],
-              'Ethernet1/6': ['100G']
-
-              }
+# input_dict = {'Ethernet1/4': ['10G', '25G', '40G', '100G'],
+#               'Ethernet1/5': ['10G'],
+#               'Ethernet1/6': ['100G']
+#
+#               }
 #
 # output_dict = {'10G': ['Ethernet1/4', 'Ethernet1/5'],
 #                '25G': ['Ethernet1/5'],
 #                '40G': ['Ethernet1/4'],
 #                '100G': ['Ethernet1/4', 'Ethernet1/6']
 #                }
-output = {}
+# output = {}
 # Iterate through the input dictionary
-for interface, speeds in input_dict.items():
-    # Iterate through the speeds for each interface
-    for speed in speeds:
-        if speed not in output:
-            output[speed] = []  # Initialize the list if speed is not in the output dictionary
-        output[speed].append(interface)
+# for interface, speeds in input_dict.items():
+#     Iterate through the speeds for each interface
+    # for speed in speeds:
+    #     if speed not in output:
+            # output[speed] = []  # Initialize the list if speed is not in the output dictionary
+        # output[speed].append(interface)
 #
-print(output)
+# print(output)
 # # ======================================================================================================================
 """
 1. Write a Python script to sort (ascending and descending) a dictionary by value.
@@ -616,35 +616,6 @@ text = "Hello world! This is a hello world example, world."
 #
 # print(frequency)
 
-# ========================================================================================
-"""nested_dict = {
-    'a': 1,
-    'b': {
-        'x': 2,
-        'y': {
-            'p': 3,
-            'q': 4
-        }
-    },
-    'c': 5
-}
-
-# Output: {'a': 1, 'b_x': 2, 'b_y_p': 3, 'b_y_q': 4, 'c': 5}
-"""
-# nested_dict = {
-#     'a': 1,
-#     'b': {
-#         'x': 2,
-#         'y': {
-#             'p': 3,
-#             'q': 4
-#         }
-#     },
-#     'c': 5
-# }
-# res = {}
-
-
 # ====================================================================================================================
 """Write a Python program to verify that all values in a dictionary are the same.
 Original Dictionary:
@@ -719,7 +690,6 @@ Nested dictionary:
 #
 # print([{i:{j:k}} for i,j,k in zip(id,names,marks)])
 
-
 # =====================================================================================================================
 """ 
 Write a Python program to filter the height and width of students, which are stored in a dictionary.
@@ -791,3 +761,265 @@ Original Dictionary:
 #     dic.pop(max_element[0])
 #     res.append(max_element[0])
 # print(res)
+
+""" Write a  Python program to filter even numbers from a dictionary of values.
+Original Dictionary:
+{'V': [1, 4, 6, 10], 'VI': [1, 4, 12], 'VII': [1, 3, 8]}
+Filter even numbers from said dictionary values:
+{'V': [4, 6, 10], 'VI': [4, 12], 'VII': [8]}
+Original Dictionary:
+{'V': [1, 3, 5], 'VI': [1, 5], 'VII': [2, 7, 9]}
+Filter even numbers from said dictionary values:
+{'V': [], 'VI': [], 'VII': [2]}"""
+
+# dic = {'V': [1, 3, 5], 'VI': [1, 5], 'VII': [2, 7, 9]}
+# for key,value in dic.items():
+#     dic[key] = [i for i in value if i % 2==0]
+# print(dic)
+
+
+"""Write a  Python program to find the shortest list of values for the keys in a given dictionary.
+Original Dictionary: {'V': [10, 12], 'VI': [10], 'VII': [10, 20, 30, 40], 'VIII': [20], 'IX': [10, 30, 50, 70], 'X': [80]} 
+Shortest list of values with the keys of the said dictionary: ['VI', 'VIII', 'X']"""
+
+# dic = {'V': [10, 12], 'VI': [10], 'VII': [10, 20, 30, 40], 'VIII': [20], 'IX': [10, 30, 50, 70], 'X': [80]}
+# res = [key for key,value in dic.items() if len(value) == min(len(value) for value in dic.values())]
+# print(res)
+
+"""Write a  Python program to count the frequency of a dictionary.
+Original Dictionary:
+{'V': 10, 'VI': 10, 'VII': 40, 'VIII': 20, 'IX': 70, 'X': 80, 'XI': 40, 'XII': 20}
+Count the frequency of the said dictionary:
+Counter({10: 2, 40: 2, 20: 2, 70: 1, 80: 1})
+"""
+# dic = {'V': 10, 'VI': 10, 'VII': 40, 'VIII': 20, 'IX': 70, 'X': 80, 'XI': 40, 'XII': 20}
+# res = {}
+# for key,value in dic.items():
+#     if value not in res:
+#         res[value] = 1
+#     else:
+#         res[value] += 1
+#
+# print(res)
+
+"""Write a  Python program to combine two lists into a dictionary. The elements of the first one serve as keys and the elements of the second one serve as values. Each item in the first list must be unique and hashable.
+Sample Output:
+Original lists:
+['a', 'b', 'c', 'd', 'e', 'f']
+[1, 2, 3, 4, 5]
+Combine the values of the said two lists into a dictionary:
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}"""
+
+# keys = ['a', 'b', 'c', 'd', 'e', 'f']
+# values = [1, 2, 3, 4, 5]
+#
+# print({i:j for i,j in zip(keys,values)})
+
+"""Write a  Python program to transform a dictionary into a list of tuples.
+Sample Output:
+Original Dictionary:
+{'Red': 1, 'Green': 3, 'White': 5, 'Black': 2, 'Pink': 4}
+Convert the said dictionary to a list of tuples:
+[('Red', 1), ('Green', 3), ('White', 5), ('Black', 2), ('Pink', 4)]"""
+dic = {'Red': 1, 'Green': 3, 'White': 5, 'Black': 2, 'Pink': 4}
+print({(i,j) for i,j in dic.items()})
+
+""". Write a Python program to convert a given tuple of positive integers into an integer.
+Original tuple:
+(1, 2, 3)
+Convert the said tuple of positive integers into an integer:
+123
+Original tuple:
+(10, 20, 40, 5, 70)
+Convert the said tuple of positive integers into an integer:
+102040570"""
+#
+# tuple1 = (1, 2, 3)
+# integer = ""
+# for i in tuple1:
+#     integer += str(i)
+# print(integer)
+
+"""Write a Python program to check if a specified element appears in a tuple of tuples.
+Original list:
+(('Red', 'White', 'Blue'), ('Green', 'Pink', 'Purple'), ('Orange', 'Yellow', 'Lime'))
+Check if White present in said tuple of tuples!
+True
+Check if White present in said tuple of tuples!
+True
+Check if Olive present in said tuple of tuples!
+False"""
+
+""""Write a  Python program to find the key of the maximum value in a dictionary.
+Sample Output:
+Original dictionary elements:
+{'Theodore': 19, 'Roxanne': 22, 'Mathew': 21, 'Betty': 20}
+Finds the key of the maximum and minimum value of the said dictionary:
+('Roxanne', 'Theodore')"""
+
+# dict1 = {'Theodore': 19, 'Roxanne': 22, 'Mathew': 21, 'Betty': 20}
+# max_key = max(dict1.items(),key=lambda x:x[1])
+# min_key = min(dict1.items(),key=lambda x:x[1])
+
+# print((max_key[0],min_key[0]))
+#
+"""Write a Python program to create a flat list of all the values in a flat dictionary.
+Sample Output:
+Original dictionary elements:
+{'Theodore': 19, 'Roxanne': 20, 'Mathew': 21, 'Betty': 20}
+Create a flat list of all the values of the said flat dictionary:
+[19, 20, 21, 20]"""
+
+# dict1 = {'Theodore': 19, 'Roxanne': 20, 'Mathew': 21, 'Betty': 20}
+# values = []
+# for value in dict1.values():
+#     values.append(value)
+# print(values)
+
+"""Write a  Python program to create a flat list of all the keys in a flat dictionary"""
+# keys = []
+# for key in dict1.keys():
+#     keys.append(key)
+# print(keys)
+
+"""Write a  Python program to transform a dictionary into a list of tuples.
+Sample Output:
+Original Dictionary:
+{'Red': 1, 'Green': 3, 'White': 5, 'Black': 2, 'Pink': 4}
+Convert the said dictionary to a list of tuples:
+[('Red', 1), ('Green', 3), ('White', 5), ('Black', 2), ('Pink', 4)]"""
+
+# dict2 = {'Red': 1, 'Green': 3, 'White': 5, 'Black': 2, 'Pink': 4}
+# print([(key,value) for key,value in dict2.items()])
+
+"""Write a  Python program to combine two lists into a dictionary. The elements of the first one serve as keys and the elements of the second one serve as values. Each item in the first list must be unique and hashable.
+Sample Output:
+Original lists:
+['a', 'b', 'c', 'd', 'e', 'f']
+[1, 2, 3, 4, 5]
+Combine the values of the said two lists into a dictionary:
+{'a': 1, 'b': 2, 'c': 3, 'd': 4, 'e': 5}"""
+
+# lis1 = ['a', 'b', 'c', 'd', 'e', 'f']
+# lis2 = [1, 2, 3, 4, 5]
+
+# print({i:j for i,j in zip(lis1,lis2)})
+
+"""Write a  Python program to combine two or more dictionaries, creating a list of values for each key.
+Sample Output:
+Original dictionaries:
+{'w': 50, 'x': 100, 'y': 'Green', 'z': 400}
+{'x': 300, 'y': 'Red', 'z': 600}
+Combined dictionaries, creating a list of values for each key:
+{'w': [50], 'x': [100, 300], 'y': ['Green', 'Red'], 'z': [400, 600]}"""
+
+# dic1 = {'w': 50, 'x': 100, 'y': 'Green', 'z': 400}
+# dic2 = {'x': 300, 'y': 'Red', 'z': 600}
+# dicts = [dic1,dic2]
+# out = {}
+# for d in dicts:
+#     for key,value in d.items():
+#         if key not in out:
+#             out[key] = [value]
+#         else:
+#             out[key].append(value)
+#
+# print(out)
+
+"""Write a  Python program to invert a given dictionary with non-unique hashable values.
+Sample Output:
+{8: ['Ora Mckinney', 'Mathew Gilbert'], 7: ['Theodore Hollandl', 'Mae Fleming', 'Ivan Little']}
+"""
+# students = {
+#   'Ora Mckinney': 8,
+#   'Theodore Hollandl': 7,
+#   'Mae Fleming': 7,
+#   'Mathew Gilbert': 8,
+#   'Ivan Little': 7,
+#   'john canedy': 6
+# }
+# out = {}
+# for name,grade in students.items():
+#     if grade not in out:
+#         out[grade] = [name]
+#     else:
+#         out[grade].append(name)
+# print(out)
+
+"""
+Write a  Python program to count the frequency of a dictionary.
+Original Dictionary:
+{'V': 10, 'VI': 10, 'VII': 40, 'VIII': 20, 'IX': 70, 'X': 80, 'XI': 40, 'XII': 20}
+Count the frequency of the said dictionary:
+Counter({10: 2, 40: 2, 20: 2, 70: 1, 80: 1})
+
+"""
+# dic1 = {'V': 10, 'VI': 10, 'VII': 40, 'VIII': 20, 'IX': 70, 'X': 80, 'XI': 40, 'XII': 20}
+# out = {}
+# for value in dic1.values():
+#     if value not in out:
+#         out[value] = 1
+#
+#     else:
+#         out[value] += 1
+# print(out)
+
+"""
+Write a  Python program to find the shortest list of values for the keys in a given dictionary.
+Original Dictionary: {'V': [10, 12], 'VI': [10], 'VII': [10, 20, 30, 40], 'VIII': [20], 'IX': [10, 30, 50, 70], 'X': [80]}
+Shortest list of values with the keys of the said dictionary: ['VI', 'VIII', 'X']
+
+"""
+
+dict1 = {'V': [10, 12], 'VI': [10], 'VII': [10, 20, 30, 40], 'VIII': [20], 'IX': [10, 30, 50, 70], 'X': [80]}
+res = []
+print(dict1)
+for key,value in dict1.items():
+    min_len = min(dict1.items(),key=len)
+    if len(value) == min_len:
+        res.append(key)
+
+print(res)
+
+""" Write a  Python program to find the specified number of maximum values in a given dictionary.
+Original Dictionary:
+{'a': 5, 'b': 14, 'c': 32, 'd': 35, 'e': 24, 'f': 100, 'g': 57, 'h': 8, 'i': 100}
+1 maximum value(s) in the said dictionary:
+['f']
+2 maximum value(s) in the said dictionary:
+['f', 'i']
+5 maximum value(s) in the said dictionary:
+['f', 'i', 'g', 'd', 'c']"""
+
+dic1 = {'a': 5, 'b': 14, 'c': 32, 'd': 35, 'e': 24, 'f': 100, 'g': 57, 'h': 8, 'i': 100}
+dic_range = 5
+res = []
+for i in range(dic_range):
+    max_element = max(dic1.items(),key=lambda x:x[1])
+    dic1.pop(max_element[0])
+    res.append(max_element[0])
+print(res)
+
+""""
+Write a Python program to convert more than one list to a nested dictionary.
+Original strings:
+['S001', 'S002', 'S003', 'S004']
+['Adina Park', 'Leyton Marsh', 'Duncan Boyle', 'Saim Richards']
+[85, 98, 89, 92]
+Nested dictionary:
+[{'S001': {'Adina Park': 85}}, {'S002': {'Leyton Marsh': 98}}, {'S003': {'Duncan Boyle': 89}}, {'S004': {'Saim Richards': 92}}]"""
+
+roll_nos = ['S001', 'S002', 'S003', 'S004']
+names = ['Adina Park', 'Leyton Marsh', 'Duncan Boyle', 'Saim Richards']
+marks = [85, 98, 89, 92]
+
+out = [{roll_nos[i]:{names[i]:marks[i]} for i in range(len(roll_nos))}]
+print(out)
+
+# or
+nested_dict = []
+
+for i in range(len(roll_nos)):
+    nested_dict.append({roll_nos[i]: {names[i]: marks[i]}})
+print(nested_dict)
+

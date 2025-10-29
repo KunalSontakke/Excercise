@@ -66,7 +66,7 @@ Here are some strategies to make a framework dynamic:
     Logging and Reporting: Implement detailed logging and reporting mechanisms within your testing framework.
     This helps in identifying which locators failed and why, aiding in troubleshooting and fixing issues.
 
-    Use of AI/ML Tools: Explore the use of AI/ML-based tools that can learn and adapt to changing locators by identifying patterns and automatically updating the locators used in tests.
+    Use of AI and ML/ML Tools: Explore the use of AI and ML/ML-based tools that can learn and adapt to changing locators by identifying patterns and automatically updating the locators used in tests.
 
     Cross-Check Locators: Consider using multiple locators for critical elements and cross-checking them.
     If one locator fails, the framework can attempt to locate the element using alternative locators.

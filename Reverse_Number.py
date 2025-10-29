@@ -25,15 +25,18 @@ print("reverse number is ", reverse_num)
 
 # ============================================================================
 inp = int(input("enter a number : "))
-
 stri = str(inp)
-
 rev_str = stri[::-1]
-
 print("reversed number is  :", rev_str)
 
+num = 1234
 
-str_inp = input("enter the string")
+rev = 0
+while num != 0:
+    dig = num % 10
+    rev = rev * 10 + dig
+    num = num // 10
+print(rev)
 
 
 

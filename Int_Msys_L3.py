@@ -1,13 +1,14 @@
-"""1.verify the endpoint is working
-2. visit URL
+"""
+1.verify the endpoint is working
+2.visit URL
 3.check for page is visible or not
 
 4.check for 'create new user' button and click
 5.create a list of usernames
 6.iterate over all tge usernames present
-5.enter the desired data(email,phine,number,addresss)
+5.enter the desired data(email,phone,number,address)
 6.click on create_new_user button
-7.assert successful message is visible for all successfull creattion
+7.assert successful message is visible for all successful creation
 8.send POST request for all usernames
 9.assert 201 in success status code
 

@@ -29,9 +29,10 @@ import pytest
 # mid()
 """
 for i in range(1, 101):
-	if int(i*0.5)==i*0.5:"""
+	if int(i*0.5)==i*0.5:
+	"""
 
-print([i for i in range(1, 101) if (i * 0.5) == 0.5])
+print([i for i in range(1, 101) if int(i * 0.5) == 0.5])
 
 """Output of the following Python code?
 a={i: 'A' + str(i) for i in range(5)}"""

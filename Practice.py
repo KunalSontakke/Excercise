@@ -1,29 +1,15 @@
+"""count the frequency of each letter regardless of it's case"""
 
-# Q.1 Find subarray with given sum without using any extra space A[] = {1,2,3,4,5} Output - 2,4
-def subArraySum(arr, sum):
-    """
+inp = "Th1s !s @ pyThon Interv13w"
+out = {}
+for char in inp.lower():
+    if char not in out:
+        out[char] = 1
+    else:
+        out[char] += 1
+print(out)
 
-    :param arr: represents an array with numbers
-    :param sum: target sum
-    :return: range of indices which equals to sum
-    """
-    for i in range(0, len(arr)):
-        currentSum = arr[i]
-        if currentSum == sum:
-            print("Sum found at indexes", i)
-            return
-        else:
-            for j in range(i + 1, len(arr)):
-                currentSum += arr[j]
-                if currentSum == sum:
-                    print(f"{i},{j}")
-                    return
-    print("No Subarray Found")
+input_str = "Th1s !s @ pyThon Interv13w"
+out = "tH1S 2S 3 PYtHON iNTERV45W"
 
-
-if __name__ == "__main__":
-    A = [1,2,3,4,5]
-    sum = 15
-    subArraySum(A, sum)
-
-
+print("".join([i.lower() if i.isupper() else i.upper() for i in input_str]))

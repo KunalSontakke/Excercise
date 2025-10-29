@@ -460,3 +460,51 @@
 #     out += num[len(str):]
 #
 # print(out)
+
+"""Write a Python program that returns a string sorted alphabetically by the first character of a given string of words.
+Sample Data:
+("Red Green Black White Pink") -> "Black Green Pink Red White"""
+
+# str1 = "Red Green Black White Pink"
+# out = "Black Green Pink Red White"
+# print(" ".join(sorted([i for i in str1.split()])))
+
+"""Write a Python program that takes a string and replaces all the characters with their respective numbers.
+Sample Data:
+("Python") -> "16 25 20 8 15 14"
+("Java") -> "10 1 22 1"
+("Python Tutorial") -> "16 25 20 8 15 14 20 21 20 15 18 9 1 12"""
+
+# str2 = "python"
+# order = [str(ord(i)-96) for i in str2]
+# print(order)
+# for i in order:
+#     print(i,end=" ")
+
+
+"""Write a Python program to insert space before every capital letter appears in a given word.
+Sample Data:
+("PythonExercises") -> "Python Exercises"
+("Python") -> "Python"
+("PythonExercisesPracticeSolution") -> "Python Exercises Practice Solution"""
+
+str3 = "PythonExercises"
+out = ""
+for i in str3:
+    if i.isupper() and out:
+        out = out + " " + i.upper()
+    else:
+        out = out + i
+
+print(out.strip())
+
+"""Write a Python program that takes a string and returns # on both sides of each element, which are not vowels.
+Sample Data:
+("Green" -> "-G--r-ee-n-"
+("White") -> "-W--h-i-t-e"
+("aeiou") -> "aeiou"""
+
+str4 = "green"
+result = ""
+
+

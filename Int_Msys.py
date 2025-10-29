@@ -1,35 +1,17 @@
-"""
-1) Difference between tuple and string
-2) difference between selenium and pytest
-3) difference between driver.close() and driver.quit()
-4) markers in pytest
-5) pull requests in git
-6) is Agile incremental or iterative
-7) Defect Life cycle
-
-"""
-"""combine both dictionaries into a dictionary"""
-dic1 = {"name":"kunal","lastname":"sontakke","company":"calsoft","location":"indore"}
-dic2 = {"language":"python","framework":"pytest","SCM":"git"}
-
-dic3 = {}
-dic3.update({**dic1,**dic2})
-print(dic3)
+def stem_words(text):
+    words = text.split()
+    stemmed_words = []
+    for word in words:
+        if word.endswith('ed') or word.endswith('ly'):
+            stemmed_word = word[:-2]
+        if word.endswith('ing'):
+            stemmed_word = word[:-3]
+        else:
+            stemmed_word = word
+        if len(stemmed_word) > 8:
+            stemmed_word = stemmed_word[:8]
+        stemmed_words.append(stemmed_word)
+    return ' '.join(stemmed_words)
 
 
-"""create a function while find HCF of two numbers"""
-
-
-def find_HCF(n1, n2):
-    min_num = min(n1,n2)
-    hcf = 1
-    for i in range(1,min_num+1):
-        if n1 % i == 0 and n2 % i == 0:
-            hcf = i
-    print(f"hcf of {n1} and {n2} is {hcf}")
-
-
-n1 = int(input("n1:"))
-n2 = int(input("n2:"))
-
-find_HCF(n1,n2)
+print(stem_words("an extremely dangerous dog is barking"))

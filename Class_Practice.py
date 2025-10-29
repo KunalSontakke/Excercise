@@ -41,13 +41,12 @@ Include attributes like name, country and date of birth. Implement a method to d
 #         self.country = country
 #         self.DOB = DOB
 #
-
 #
-# def calculate_age(self):
-#     age = datetime.now().year - self.DOB
-#     return age
-
-
+#     def calculate_age(self):
+#         age = datetime.now().year - self.DOB
+#         return age
+#
+#
 # person = Person("kunal", "india", 1994)
 # print(person.calculate_age())
 

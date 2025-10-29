@@ -33,12 +33,9 @@ for i in range(1,6):
 * * * * *
 """
 for i in range(1,6):
-    print(" *" * i + " " * (6-i))
-print()
+    print(" " * (6-i) + "* " * i)
 
-for i in range(1,6):
-    print("* " * i + " " * (6-i))
-print()
+
 """
 * * * * *
 * * * *

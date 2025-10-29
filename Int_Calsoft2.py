@@ -7,7 +7,7 @@
 6) func() in decorator in function
 7) list and dictionary Comprehensions
 8) List and Dictionary Difference
-9)Map in python
+9) Map in python
 
 """
 import math

@@ -446,7 +446,7 @@ and prints all the words and the frequency of each word."""
 
 # ======================================================================================================================
 """Write a Python program to count the number of each character in a text file."""
-# with open("C:\\Users\\Kunal\\PycharmProjects\\Excercise\\abc.txt") as file:
+# with open("C:\\Users\\Kunal\\PycharmProjects\\Excercise\\abc.json") as file:
 #     data = file.read()
 #
 #     for char in data.split(" "):

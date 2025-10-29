@@ -1,6 +1,9 @@
+import platform
+
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as SF
 from selenium.webdriver.chrome.service import Service as SC
+
 """Create a fixture named simple_fixture that returns a simple dictionary with key-value pairs.
 Write a test function that uses this fixture to assert a value from the dictionary
 """
@@ -236,17 +239,36 @@ def is_even(n):
     else:
         return "odd"
 
+
 @pytest.mark.parametrize("num",[12,13,15,88,99])
 def test_num(num):
     result = is_even(num)
     return result
 
 
+@pytest.mark.usefixtures("get_browser")
+def test_web():
+    driver = get_browser
 
 
+def is_odd(n):
+    if n % 2 != 1:
+        print("odd")
+    else:
+        print("even")
 
 
+@pytest.mark.parametrize("num",[1,2,3,4,5])
+def test_numbers(num):
+    result = is_even(num)
+    return result
 
+@pytest.fixture(scope='function')
+def input_value():
+    return 13
 
+def test_multiply(input_value):
+    for i in range(11):
+        print(input_value * i)
 
 

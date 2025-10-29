@@ -1,7 +1,5 @@
 from Agilion import agilion
 
-agilion.set_name
-
 data = {
     1000: ('Task1', 'Module1'),
     1001: ('Task2', 'Module2'),
@@ -22,7 +20,6 @@ except:
 # ===================================================================================================
 
 list1 = [222343, 8, 7, 9000, 2345]
-temp = 0
 for i in range(0, len(list1)):
     for j in range(i + 1, len(list1)):
         if list1[i] > list1[j]:

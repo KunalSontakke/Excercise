@@ -226,7 +226,6 @@ from selenium.webdriver.support.select import Select
 # print(pri_num(inp))
 
 # ======================================================================================================================
-
 # Write a Python program to create a decorator that logs the arguments and return value of a function.The decorator
 # in this code logs the function name, arguments, and return value whenever the decorated function is called
 

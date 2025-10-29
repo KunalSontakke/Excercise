@@ -5,6 +5,9 @@ replace last character with any another character without using any another vari
 """
 # inp = "kunal"
 
+s='kunal'
+print(s.replace("l","s"))
+
 """
 s='mynameiskunal' reverse the string without built_in_function
 

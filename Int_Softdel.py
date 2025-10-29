@@ -135,7 +135,7 @@ for i in range(6):
     print()
 
 """
-[4:02 PM] ManuSingh Sikarwar
+ManuSingh Sikarwar
 A
 
 BB
@@ -170,5 +170,4 @@ circle.show_pi_value()
 def show_details(name,age):
     print(name)
     print(age)
-
 

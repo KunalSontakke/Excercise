@@ -29,7 +29,7 @@ class Dad:
 
 class Mom(Dad):
     def __init__(self):
-        super().__init__()
+        super().__init__(self,PIN=12234)
         print("Mom is initiated")
 
     def hobby(self):

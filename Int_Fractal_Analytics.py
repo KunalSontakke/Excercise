@@ -21,7 +21,7 @@ for i in input:
         freq[i] += 1
 
 for letter,count in freq.items():
-    if count> 1:
+    if count > 1:
         print(letter,":",count)
 
 

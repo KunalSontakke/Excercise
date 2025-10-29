@@ -21,6 +21,28 @@ rather than closing it immediately after sending the response. This allows the c
 reducing the overhead of establishing new connections for each request.
 """
 
+
+""""
+what is difference between text and response
+In the requests library, res2.text and res2.content are two different attributes of a response object that represent the response body in different formats.
+res2.text
+
+    Type: str (string)
+    Description: This attribute provides the response body as a Unicode string. It automatically decodes the content based on the response's encoding (which is determined from the HTTP headers).
+    Usage: Use this when you need the response content as a readable text string.
+
+res2.content
+
+    Type: bytes
+    Description: This attribute provides the response body as raw bytes. It does not perform any decoding, so you get the exact bytes as received from the server.
+    Usage: Use this when you need to work with binary data or when you need to manually handle the encoding.
+    
+    text: [{"id":"1234567890","type":"PushEvent",...}]
+
+    content: b'[{"id":"1234567890","type":"PushEvent",...}]'
+
+In res2.text, you see the response as a string. In res2.content, you see the raw bytes (notice the b prefix, indicating a bytes object).
+"""
 # ========================================================================================================================
 
 """

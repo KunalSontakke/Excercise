@@ -6,24 +6,24 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-service_obj = Service("Drivers/chromedriver_win32/chromedriver.exe")
-
-driver = webdriver.Chrome(service=service_obj)
-
-driver.maximize_window()
-
-driver.get("https://ultimateqa.com/dummy-automation-websites/")
-
-time.sleep(3)
+# service_obj = Service("Drivers/chromedriver_win32/chromedriver.exe")
+#
+# driver = webdriver.Chrome(service=service_obj)
+#
+# driver.maximize_window()
+#
+# driver.get("https://ultimateqa.com/dummy-automation-websites/")
+#
+# time.sleep(3)
 # button = driver.find_element(By.PARTIAL_LINK_TEXT,"DISCOVERY SESSION")
 # locator = By.PARTIAL_LINK_TEXT,"DISCOVERY SESSION"
 # wait = WebDriverWait(driver,10).until(expected_conditions.presence_of_element_located(locator))
 
 # button.click()
 
-driver.execute_script("window.scrollBy(0,document.body.scrollHeight)", "")
-
-time.sleep(3)
+# driver.execute_script("window.scrollBy(0,document.body.scrollHeight)", "")
+#
+# time.sleep(3)
 
 
 class father:
@@ -31,14 +31,14 @@ class father:
         print("I am father")
 
 
-class mom(father):
+class mom():
     def intro(self):
         print("I am mom")
 
 
-class son(mom):
+class son(mom,father):
     def intro(self):
-        father.intro(self)
+        super().intro()
         print("I am son")
 
 
