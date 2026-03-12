@@ -9,6 +9,7 @@ Here's how it works:
 
     Streaming: This technique allows for the progressive rendering of content in the browser or processing of data on the client-side
     without having to wait for the entire response to be received."""
+import openpyxl
 
 """
 The 'Connection': 
@@ -135,11 +136,10 @@ If a request times out, raise a Timeout exception."""
 # ================================================================================================================
 
 """Write a Python program to send cookies to a given server and access cookies from the response of a server."""
-# cookies = {"cookie":"value"}
-# response = requests.get("https://httpbin.org/get",verify=False,cookies=cookies)
-# print(response.text)
-# print(response.cookies)
-# print(response.headers)
+cookies = {"cookie":"value"}
+response = requests.get("https://httpbin.org/get",verify=False,cookies=cookies)
+print(response.text)
+print(response.cookies)
+print(response.headers)
 
 # ===============================================================================================================
-

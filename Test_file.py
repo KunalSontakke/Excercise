@@ -1,172 +1,53 @@
-# import argparse
-# import platform
-#
-# import pytest
-# from selenium import webdriver
-# from selenium.webdriver.chrome.service import Service
-# from selenium.webdriver.firefox.service import Service as SF
-#
-#
-# def test_multiplication():
-#     num = 11
-#     for i in range(1, 11):
-#         print(f"{num} x i", num * i)
-#
-#
-# @pytest.mark.sanity
-# @pytest.mark.parametrize("browser", ["chrome", "firefox"])
-# def test_browser(browser):
-#     global driver
-#     if browser == "chrome":
-#         service_chrome = Service("Drivers/chromedriver_win32/chromedriver.exe")
-#         driver = webdriver.Chrome(service=service_chrome)
-#         return driver
-#
-#     if browser == "firefox":
-#         service_firefox = SF("Drivers/MozilaDriver/geckodriver.exe")
-#         driver = webdriver.Firefox(service=service_firefox)
-#         return driver
-#     driver.get("https://www.automationexercise.com")
-#
-#
-# @pytest.mark.sanity
-# @pytest.fixture(scope="function", params=["chrome", "firefox"])
-# def get_driver(request):
-#     if request.param == "chrome":
-#         service_chrome = Service("Drivers/chromedriver_win32/chromedriver.exe")
-#         driver = webdriver.Chrome(service=service_chrome)
-#         print("Opening chrome")
-#
-#         yield driver
-#
-#         print("closing driver")
-#
-#         driver.close()
-#
-#     if request.param == "firefox":
-#         service_firefox = SF("Drivers/MozilaDriver/geckodriver.exe")
-#         driver = webdriver.Firefox(service=service_firefox)
-#
-#         print("Opening firefox browser")
-#         yield driver
-#
-#         print("closing browser")
-#         driver.close()
-#
-#
-# def test_url(get_driver):
-#     browser = get_driver
-#     browser.get("https://www.automationexercise.com")
-#     print(browser.title)
-#
-#
-# @pytest.mark.skip
-# def test_addition():
-#     a, b = 2, 3
-#     return a + b
-#
-#
-# # @pytest.mark.skipif(platform.system() == "Windows", reason="test is not supported windows")
-# # def test_url(browsers):
-# #     browsers.get("https://www.facebook.com")
-# #
-# #     print(browsers.title)
-#
-#
-# @pytest.mark.xfail
-# def test_division():
-#     a, b = 4, 0
-#     return a / b
-#
-#
-# def pytest_adoption(parser):
-#     parser.adoption("--browser",
-#                     action="store",
-#                     default="chrome",
-#                     choices=["chrome", "firefox", "edge"],
-#                     help="Specify the browser to test")
-#
-#
-#
-# def parse_argument():
-#     parser = argparse.ArgumentParser()
-#     parser.add_argument("--browser", action="store", default="chrome", choices=["chrome", "firefox", "edge"],
-#                         help="Support")
-#     args = parser.parse_args()
-#     return args
-#
-#
-# @pytest.fixture(scope="function")
-# def browser_option(request):
-#     return request.config.getoption("--browser")
-#
-# def test_div():
-#     a = 4
-#     b = 2
-#     div = a /b
-#     print(div)
-#
-#
-# @pytest.mark.parametrize("num,output",[(1,11),(2,22),(3,33),(4,44),(5,56)])
-# def test_output(num,output):
-#     assert num * 11 == output
-#
-#
-import logging
+"""Task: Write a test that checks whether a given string is a palindrome."""
+import os.path
 
 import pytest
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service as SC
-from selenium.webdriver.firefox.service import Service as SF
-from webdriver_manager.chrome import ChromeDriverManager
+
+"""Write a pytest test function to test addition."""
+@pytest.mark.parametrize('a,b',[(1,2),(2,3),(4,5),(5,11)])
+def test_addition(a,b):
+    return a + b
+
+"""Test a function that divides two numbers and raises ZeroDivisionError."""
+
+@pytest.mark.parametrize('a,b',[(4,2),(20,4),(25,5),(3,0)])
+def test_division(a,b):
+    try:
+         return a/b
+
+    except ZeroDivisionError as e:
+        print(e)
 
 
-#
-# @pytest.fixture(scope='function',params=['chrome','firefox'])
-# def get_driver(request):
-#     global driver
-#     if request.param == "chrome":
-#         service_obj = SC("Drivers/chromedriver_win32/chromedriver.exe")
-#         driver = webdriver.Chrome(service=service_obj)
-#         print("Opened Chrome browser.....")
-#
-#         yield driver
-#
-#         print("closing browser")
-#         driver.close()
-#
-#     elif request.param == "firefox":
-#         service_obj = SF('Drivers/MozilaDriver/geckodriver.exe')
-#         driver = webdriver.Firefox(service=service_obj)
-#         print("Opened Firefox Browser.....")
-#
-#         yield driver
-#
-#         print("Closing broswer")
-#
-#         driver.close()
-#
-#
-# def test_webpage(get_driver):
-#     browser = get_driver
-#     browser.get('https://www.facebook.com')
-#     print(driver.title)
+"""Fixture returns: [1, 2, 3, 4, 5]
+Write a test that checks if sum is 15."""
 
-@pytest.mark.parametrize('browser',['chrome','firefox'])
-def test_url(browser):
-    if browser == 'chrome':
-        service_obj = SC('Drivers/chromedriver_win32/chromedriver.exe')
-        driver = webdriver.Chrome(service=service_obj)
-        yield driver
-        driver.close()
+@pytest.fixture(scope='function')
+def list_retriever():
+    lis = [1,2,3,4,5]
+    return lis
 
-    elif browser == 'firefox':
-        service_obj = SC('Drivers/chromedriver_win32/chromedriver.exe')
-        driver = webdriver.Chrome(service=service_obj)
-        yield driver
-
-        driver.close()
+def test_sum(list_retriever):
+    lis = list_retriever
+    assert sum(lis) == 15
 
 
+# =====================================================================
+"""Example: Opening a file
 
+Task:
+Fixture opens a file → test writes to it → fixture closes file."""
+@pytest.fixture(scope='function')
+def open_file(mode='w'):
+    file = open(os.path.join('Data','file_python'),mode)
 
+    yield file
+
+    file.close()
+
+def test_file(open_file):
+    file = open_file
+    file.write('here I am adding new text using fixture')
+
+    with open(file.name,'r') as f:
+        print(f.read())

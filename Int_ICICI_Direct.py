@@ -14,6 +14,7 @@ import requests
 read =requests.get("https://www.geeksforgeeks.org/python-programming-language/")
 
 print(read.content)
+print(read.text)
 
 """write a python program to find factorial of number using recursive function"""
 

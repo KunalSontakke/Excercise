@@ -25,7 +25,6 @@ print(fibonacci(6))
 
 # =======================================================================================================================
 
-
 def fibona(n):
     if n < 0:
         return 0
@@ -35,9 +34,6 @@ def fibona(n):
         return fibona(n-1) + fibona(n-2)
 
 
-print("file name is %s"%__name__)
-if __name__ == "__main__":
-    print(fibona(6))
 
 
 def find_fibonacci_series(n):

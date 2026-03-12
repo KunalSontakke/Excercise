@@ -425,6 +425,8 @@
 # Pythonist 2 → pYTHONIST 2  
 # 
 # """
+import re
+
 #
 # string = input("Enter the String : ")
 # res = ""
@@ -488,15 +490,15 @@ Sample Data:
 ("Python") -> "Python"
 ("PythonExercisesPracticeSolution") -> "Python Exercises Practice Solution"""
 
-str3 = "PythonExercises"
-out = ""
-for i in str3:
-    if i.isupper() and out:
-        out = out + " " + i.upper()
-    else:
-        out = out + i
-
-print(out.strip())
+# str3 = "PythonExercises"
+# out = ""
+# for i in str3:
+#     if i.isupper() and out:
+#         out = out + " " + i.upper()
+#     else:
+#         out = out + i
+#
+# print(out.strip())
 
 """Write a Python program that takes a string and returns # on both sides of each element, which are not vowels.
 Sample Data:
@@ -506,5 +508,19 @@ Sample Data:
 
 str4 = "green"
 result = ""
+# =================================================================
 
+"""Given the Python test string below, which of the following pattern matching functions will find and print the value 'Blue'? 
+testString = 'Yellow Blue Gold Green'
+ 1. re.findall (r'Blue', testString) [0] 
+ 2. re.search(r'Blue', testString) 
+ 3. re.search(r'Blue', testString).group(0) 
+ 4. re.match(r'Blue').group (0) 
+ 5. re.match(r'Blue')"""
 
+testString = 'Yellow Blue Gold Green'
+
+# print(re.findall('Blue',testString)[0])
+# print(re.search('Blue',testString).group(0))
+
+# =========================================================================

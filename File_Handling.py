@@ -131,3 +131,57 @@
 #     lines = file.read().splitlines()
 #     print(random.choice(lines))
 
+# ================================================================================
+"""
+A Python program is running and must open a file name "dkunal.out" in a subdirectory next:2 of a subdirectory next 1 of the
+current directory (thus, two directories down).Which of the following are portable ways to accomplish this?
+"""
+
+# 1. fh = open("next1/next2/x.out") N
+# 2. import os
+#    path = os.path.join("next1", "next2", "x.out")
+#    fh open (path)
+# 3. import os
+#    fh = open (on path.unixtolocal("next1/next2/x.out"))
+# 4. fh =open("next1\next2\x.out")
+# 5. import os
+#    fh=open (os.path.join("next1", "next2", "x", "out"))"""
+import os
+
+# path = os.path.join('next1', 'next2', 'x.text')
+# fh = open(path)
+# =======================================================================================
+"""
+Walrus Operator
+It allows you to assign a value to a variable within an expression, rather than as a separate statement.
+This can lead to more concise and sometimes more readable code,
+especially in scenarios where a value is calculated and then immediately used in a conditional statement or a loop.
+for example:
+
+using while loop ->
+text = f.readline()
+while text:
+    do_something(text)
+    text = f.readline()
+
+using walrus operator ->
+while text := f.readline():
+    do_something(text)
+
+"""
+
+"""Which of the following Python code snippets can be used as a shorter version of the code below with the Walrus Operator?
+ text = f.readline() 
+ while text: do something (text) 
+ text = f.readline() 
+
+1.while text:= f.readline(): 
+     do something (text) 
+2. while text:= f.readline():
+    do something (text.readline()) 
+3. while text:= f.readline (text()):
+    do something() 
+4. while text:= do something (text := f())
+5. while text:= text: f.readline() 
+   do something (text.readline())"""
+

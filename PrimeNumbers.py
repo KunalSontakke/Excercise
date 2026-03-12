@@ -24,10 +24,19 @@ print("count of prime numbers is",count)
 
 num = int(input("Enter number :"))
 prime_nos = []
-for i in range(2,num):
+for i in range(2,num+1):
     for j in range(2,i):
         if i %j == 0:
             break
     else:
         prime_nos.append(i)
 print(prime_nos)
+
+num = int(input("Enter number"))
+
+for i in range(2,num+1):
+    for j in range(2,i+1):
+        if i %j ==0:
+            pass
+    else:
+        print("this number is prime")

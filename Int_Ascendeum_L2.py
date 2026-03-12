@@ -1,62 +1,38 @@
 import random
 
-countA = 0
-countB = 0
-countC = 0
-countD = 0
-
-size = int(input("Enter the game size"))
+# Get game size
+players = 4
+size = int(input("Enter the game size: "))
 game_size = size * size
-print(game_size)
+print("Final position:", game_size)
 
-while countA != game_size or countB != game_size or countC != game_size or countD != game_size:
+positions = {
+    "A": 0,
+    "B": 0,
+    "C": 0,
+    "D": 0
+}
 
-    print("player A your turn.....")
-    playerA = random.randint(1, 6)
-    print(playerA)
-    countA = countA + playerA
-    print(countA)
-    for i in range(1, countA):
-        print(i, end=",")
-    if countA == game_size:
-        break
+player_order = ["A", "B", "C", "D"]
 
-    print("player B your turn.....")
-    playerB = random.randint(1, 7)
-    print(playerB)
-    countB = countB + playerB
-    print(countB)
-    for i in range(1, countB):
-        print(i, end=",")
-    if countB == game_size:
-        break
+while True:
+    for p in player_order:
+        print(f"\nPlayer {p}, your turn...")
 
-    print("player C your turn.....")
-    playerC = random.randint(1, 7)
-    print(playerC)
-    countC = countC + playerC
-    print(countC)
-    for i in (1, countC):
-        print(i, end=",")
-    if countC == game_size:
-        break
+        dice = random.randint(1, 6)
+        print("Dice rolled:", dice)
 
-    print("player D your turn.....")
-    playerD = random.randint(1, 7)
-    print(playerD)
-    countD = countD + playerD
-    print(countD)
-    for i in (1, countD):
-        print(i, end=",")
-    if countD == game_size:
-        break
+        # Move only if within board
+        if positions[p] + dice <= game_size:
+            positions[p] += dice
 
-if countA == game_size:
-    print("player A has won the game")
-elif countB == game_size:
-    print("player B has won the game")
-elif countC == game_size:
-    print("player C has won the game")
-else:
-    print("player D has won the game")
-# ======================================================================================================================
+        print("Position:", positions[p])
+
+        # Display track
+        for i in range(1, positions[p] + 1):
+            print(i, end=",")
+
+        # Check winner
+        if positions[p] == game_size:
+            print(f"\n\nPlayer {p} has won the game!")
+            exit()

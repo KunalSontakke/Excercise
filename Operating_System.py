@@ -35,7 +35,7 @@ import time
 
 """3. Write a  Python program to scan a specified directory and identify the subdirectories and files."""
 
-
+import os
 root = 'C:\\Users\\Kunal\\PycharmProjects'
 
 for file in os.scandir(root):

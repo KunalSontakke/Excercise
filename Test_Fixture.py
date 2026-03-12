@@ -1,4 +1,5 @@
 import platform
+import sys
 
 from selenium import webdriver
 from selenium.webdriver.firefox.service import Service as SF
@@ -58,11 +59,11 @@ Write a test function that uses this fixture with different parameters."""
 
 # =================================================================================================
 
-"""Create a fixture named file_fixture that creates a temporary text file with some content before the test 
+"""Create a fixture named file_fixture.txt that creates a temporary text file with some content before the test 
 and deletes it after the test. Write a test function that reads the content from the file and asserts it."""
 
 # @pytest.fixture(scope="function")
-# def file_fixture(request):
+# def file_fixture.txt(request):
 #     file_name = request.config.getoption("--filename",default="Data/file.txt")
 #     file = open(file_name,"w")
 #     yield file
@@ -71,15 +72,15 @@ and deletes it after the test. Write a test function that reads the content from
 #     print("closed file")
 #
 #
-# def test_file(file_fixture):
-#     read = file_fixture.read()
+# def test_file(file_fixture.txt):
+#     read = file_fixture.txt.read()
 #     print(read)
 #
 # #
 # import pytest
 #
 # @pytest.fixture(scope="function")
-# def file_fixture(tmp_path):
+# def file_fixture.txt(tmp_path):
 #     file_path = tmp_path / "file.txt"
 #     with open(file_path, "w") as file:
 #         # Write some content to the file
@@ -89,8 +90,8 @@ and deletes it after the test. Write a test function that reads the content from
 #
 #     # Teardown: The file will be automatically closed and deleted
 #
-# def test_file(file_fixture):
-#     with open(file_fixture, "r") as file:
+# def test_file(file_fixture.txt):
+#     with open(file_fixture.txt, "r") as file:
 #         file_content = file.read()
 #
 #     # Assert the content from the file
@@ -135,7 +136,7 @@ and deletes it after the test. Write a test function that reads the content from
 
 # ==============================================================================================================
 """Task: Write a test that checks whether a given string is a palindrome."""
-
+#
 # def check_palindrome(string):
 #     if string == string[::-1]:
 #         print(f"{string} is palindrome")
@@ -150,10 +151,9 @@ and deletes it after the test. Write a test function that reads the content from
 # =========================================================================================================
 """Task: Write a test for a function that performs a mathematical operation (e.g., addition, subtraction, multiplication, division)"""
 
-
-def perform_operation(a, b, operator):
-    # Function to perform a mathematical operation on two numbers
-    pass
+# def perform_operation(a, b, operator):
+#     # Function to perform a mathematical operation on two numbers
+#     pass
 
 #
 # @pytest.mark.parametrize("a, b, operator, expected_result", [
@@ -192,83 +192,83 @@ def perform_operation(a, b, operator):
 #     browsers.get("https://www.facebook.com")
 #     print(browsers.title)
 #
+# #
+# @pytest.fixture(params=["chrome","firefox"],scope="function")
+# def get_browser(request):
+#     if request.param == "chrome":
+#         service_chrome = SC("Drivers/chromedriver_win32/chromedriver.exe")
+#         driver = webdriver.Chrome(service=service_chrome)
+#         print("Opening chrome Browser")
+#         yield driver
+#         driver.close()
 #
-@pytest.fixture(params=["chrome","firefox"],scope="function")
-def get_browser(request):
-    if request.param == "chrome":
-        service_chrome = SC("Drivers/chromedriver_win32/chromedriver.exe")
-        driver = webdriver.Chrome(service=service_chrome)
-        print("Opening chrome Browser")
+#
+#     if request.param == "firefox":
+#         service_firefox = SF("Drivers/MozilaDriver/geckodriver.exe")
+#         driver = webdriver.Firefox(service=service_firefox)
+#
+#         print("opening firefox browser")
+#
+#         yield driver
+#
+#         driver.close()
+#
+#
+# def test_link(get_browser):
+#     browser = get_browser
+#     browser.get("https://automationexercise.com")
+#     print(browser.title)
+
+
+# @pytest.mark.parametrize("num1,num2,output",[(4,2,2),(16,4,4),(16,"a",16),(16,0,16)])
+# def test_division(num1,num2,output):
+#     try:
+#         assert num1 / num2 == output
+#     except ZeroDivisionError as e:
+#         print(e)
+#
+#     except AttributeError as e:
+#         print(e)
+#     except Exception as e:
+#         print(e)
+#
+# def is_even(n):
+#     if n % 2 == 0:
+#         return "even"
+#     else:
+#         return "odd"
+
+from selenium.webdriver.firefox.service import Service as SF
+
+
+@pytest.fixture(scope='function', params=['chrome', 'firefox'])
+def call_driver(request):
+    if request.param == 'chrome':
+        service_obj = Service('Drivers/chromedriver_win32/chromedriver.exe')
+        driver = webdriver.Chrome(service=service_obj)
+
+        print("chrome browser is opened")
+        driver.maximize_window()
+
         yield driver
+
+        driver.close()
+        print("browser closed....")
+
+    elif request.param == "firefox":
+        service_obj = SF('Drivers/MozilaDriver/geckodriver.exe')
+        driver = webdriver.Firefox(service=service_obj)
+
+        driver.maximize_window()
+        print("firefox browser is opened....")
+        yield driver
+
         driver.close()
 
 
-    if request.param == "firefox":
-        service_firefox = SF("Drivers/MozilaDriver/geckodriver.exe")
-        driver = webdriver.Firefox(service=service_firefox)
+@pytest.mark.xfail
+def test_webpage(call_driver):
+    driver = call_driver
+    driver.get('https://www.google.com')
 
-        print("opening firefox browser")
-
-        yield driver
-
-        driver.close()
-
-
-def test_link(get_browser):
-    browser = get_browser
-    browser.get("https://automationexercise.com")
-    print(browser.title)
-
-
-
-@pytest.mark.parametrize("num1,num2,output",[(4,2,2),(16,4,4),(16,"a",16),(16,0,16)])
-def test_division(num1,num2,output):
-    try:
-        assert num1 / num2 == output
-    except ZeroDivisionError as e:
-        print(e)
-
-    except AttributeError as e:
-        print(e)
-    except Exception as e:
-        print(e)
-
-def is_even(n):
-    if n % 2 == 0:
-        return "even"
-    else:
-        return "odd"
-
-
-@pytest.mark.parametrize("num",[12,13,15,88,99])
-def test_num(num):
-    result = is_even(num)
-    return result
-
-
-@pytest.mark.usefixtures("get_browser")
-def test_web():
-    driver = get_browser
-
-
-def is_odd(n):
-    if n % 2 != 1:
-        print("odd")
-    else:
-        print("even")
-
-
-@pytest.mark.parametrize("num",[1,2,3,4,5])
-def test_numbers(num):
-    result = is_even(num)
-    return result
-
-@pytest.fixture(scope='function')
-def input_value():
-    return 13
-
-def test_multiply(input_value):
-    for i in range(11):
-        print(input_value * i)
-
-
+    print(driver.current_url)

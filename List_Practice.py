@@ -16,6 +16,9 @@ Comprehensions in Python provide us with a short and concise way to construct ne
 Comprehension in Python converts the four to five lines of code into a one-liner.
 
 """
+from random import shuffle
+from typing import Any
+
 import selenium
 
 # 1) list Comprehension
@@ -461,7 +464,7 @@ num6 = [2, 3, 2, 4, 7, 8]
 # n = 5
 # Sample Output : ['p1', 'q1', 'p2', 'q2', 'p3', 'q3', 'p4', 'q4', 'p5', 'q5']
 # n = int(input("Enter the range : "))
-# op = [['p' + str(i), 'q' + str(i)] for i in range(1, n + 1)]
+# op = [x+ str(i) for i in range(1, n + 1) for x in Sample_list3]
 
 # print(op)
 #
@@ -642,7 +645,6 @@ num6 = [2, 3, 2, 4, 7, 8]
 # ['dagfa']
 # Items start with w from the said list:
 import random
-
 
 #
 # item = input("Enter item first letter : ")
@@ -1573,32 +1575,154 @@ Original String:
 After removing duplicate words from the said list of strings:
 ['Python', 'Exercises', 'Practice', 'Solution']"""
 
-lis2 = ['Python', 'Exercises', 'Practice', 'Solution', 'Exercises']
-out = []
-for i in lis2:
-    if i not in out:
-        out.append(i)
-print(out)
+# lis2 = ['Python', 'Exercises', 'Practice', 'Solution', 'Exercises']
+# out = []
+# for i in lis2:
+#     if i not in out:
+#         out.append(i)
+# print(out)
+#
+# # or
 
-# or
+# print([i for i in set(lis2)])
 
-print([i for i in set(lis2)])
+# ==========================================================================
+"""The output of running the Python program below is which of the following? words ['apple', 'banana', 'grape', 'pear']
+print([w[0].upper() for win words])"""
+"""
+1.['Apple', 'banana', 'grape', 'pear'] 
+2.['A', 'B', 'G', 'P']
+3.['APPLE', 'banana', 'grape', 'pear']
+4.['Apple', 'Banana', 'Grape', 'Pear'] 
+5.['APPLE', 'BANANA', 'GRAPE', 'PEAR']"""
 
-"""Write a Python program to find the first even and odd number in a given list of numbers.
+# words = ['apple', 'banana', 'grape', 'pear']
+# print([w[0].upper() for w in words])
+
+# ======================================================================
+"""A list of numbers must be sorted in ascending order by their absolute values. For example, [-1,-4, 2, 5, 3] must be sorted as [-1, 2, 3, 4, 5]. 
+Which of the following Python expressions will accomplish this, correctly sorting 1st and assigning the result to the variable sis
+
+1. slst = [x[1] for x in sorted([(abs(x),x) for x in lst))] 
+2. slst = sort (lst, key=abs)
+3. slst = sorted (lst) 
+4. slst = sorted (lst, key=abs)
+5. slst = sort (lst)"""
+
+lst = [-1, -4, 2, 5, 3]
+# print(sorted(lst,key=abs))
+# ========================================================================================
+"""Write a Python program to split a given list into two parts where the length of the first part of the list is given.
 Original list:
-[1, 3, 5, 7, 4, 1, 6, 8]
-First even and odd number of the said list of numbers:
-(4, 1)"""
+[1, 1, 2, 3, 4, 4, 5, 1]
+Length of the first part of the list: 3
+Splited the said list into two parts:
+([1, 1, 2], [3, 4, 4, 5, 1])"""
 
-lis3 = [1, 3, 5, 7, 4, 1, 6, 8]
+# lis1 = [1, 1, 2, 3, 4, 4, 5, 1]
+# length = 3
+# print((lis1[:length], lis1[length:]))
+
+# ==========================================================================
+"""Write a Python program to remove the K'th element from a given list, and print the updated list.
+Original list:
+[1, 1, 2, 3, 4, 4, 5, 1]
+After removing an element at the kth position of the said list:
+[1, 1, 3, 4, 4, 5, 1]"""
+
+# lis1 = [1, 1, 2, 3, 4, 4, 5, 1]
+# k = 3
+# print(lis1[:k] + lis1[k+1:])
+
+# ======================================================================
+"""Write a Python program to count the number of lists in a given list of lists.
+Original list:
+[[1, 3], [5, 7], [9, 11], [13, 15, 17]]
+Number of lists in said list of lists:
+4"""
+
+# lis1 = [[1, 3], [5, 7], [9, 11], [13, 15, 17]]
+# count = 0
+# for i in lis1:
+#     for j in i:
+#         count += 1
+
+# print(count)
+
+# ==================================================
+"""Write a Python program to find a list with maximum and minimum lengths.
+Original list:
+[[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]]
+List with maximum length of lists:
+(3, [13, 15, 17])
+List with minimum length of lists:
+(1, [0])"""
+
+
+# def find_min_max_list(lis: list, function: str) -> Any:
+#     if function == "maximum":
+#         max_element = max(lis, key=len)
+#         return len(max_element), max_element
+#     else:
+#         min_element = min(lis, key=len)
+#         return len(min_element), min_element
+# lis1 = [[0], [1, 3], [5, 7], [9, 11], [13, 15, 17]]
+#
+# print(find_min_max_list(lis1,"minimum"))
+#
+
+# =============================================================================
+"""Write a Python program to extract specified size of strings from a give list of string values.
+Original list:
+['Python', 'list', 'exercises', 'practice', 'solution']
+length of the string to extract:
+8
+After extracting strings of specified length from the said list:
+['practice', 'solution']"""
+
+# def find_specific_sized_word(lis : list,size : int) -> list[str] | None :
+    # out = []
+    # for i in lis:
+    #     if len(i) == size:
+    #         out.append(i)
+    # return out
+
+    # or
+
+    # return [i for i in lis if len(i)==size]
+# lis1 = ['Python', 'list', 'exercises', 'practice', 'solution']
+# print(find_specific_sized_word(lis1,8))
+
+# ======================================================================
+"""Write a Python program to find the difference between consecutive numbers in a given list.
+Original list:
+[1, 1, 3, 4, 4, 5, 6, 7]
+Difference between consecutive numbers of the said list:
+[0, 2, 1, 0, 1, 1, 1]
+
+"""
+
+# lis1 = [1, 1, 3, 4, 4, 5, 6, 7]
+# out = []
+# for i in range(len(lis1)-1):
+#     out.append(lis1[i+1] - lis1[i])
+# print(out)
+
+# =========================================================================================
+
+""""Write a Python program to extract a specified column from a given nested list.
+Original Nested list:
+[[1, 2, 3], [2, 4, 5], [1, 1, 1]]
+Extract 1st column:
+[1, 2, 1]
+Original Nested list:
+[[1, 2, 3], [-2, 4, -5], [1, -1, 1]]
+Extract 3rd column:
+[3, -5, 1]"""
+
+lis1 = [[1, 2, 3], [2, 4, 5], [1, 1, 1]]
 out = []
-for i in lis3:
-    if i % 2 == 0:
-       out.append(i)
-       break
-    elif i %2 == 1:
-        out.append(i)
-        break
-
-
-print(tuple(out))
+column = 1
+for item in lis1:
+    out.append(item[column-1])
+print(out)

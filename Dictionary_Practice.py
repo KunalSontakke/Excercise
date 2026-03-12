@@ -174,12 +174,12 @@
 # # print(sample_dict)
 # import operator
 #
-import operator
+
 
 #
-# dic = {'a':103,'b':34,'c':45,'d':67,'e':87}
-# # Sort the dictionary using keys
-# sort_dict = sorted(dic.items(),key=lambda x:x[0])
+dic = {'a':103,'b':34,'c':45,'d':67,'e':87}
+# Sort the dictionary using keys
+sort_dict = dict(sorted(dic.items(),key=lambda x:x[0]))
 
 
 """The lambda item: item[0] specifies that the sorting should be done based on the first element of each tuple (the keys)."""
@@ -821,8 +821,8 @@ Original Dictionary:
 {'Red': 1, 'Green': 3, 'White': 5, 'Black': 2, 'Pink': 4}
 Convert the said dictionary to a list of tuples:
 [('Red', 1), ('Green', 3), ('White', 5), ('Black', 2), ('Pink', 4)]"""
-dic = {'Red': 1, 'Green': 3, 'White': 5, 'Black': 2, 'Pink': 4}
-print({(i,j) for i,j in dic.items()})
+# dic = {'Red': 1, 'Green': 3, 'White': 5, 'Black': 2, 'Pink': 4}
+# print({(i,j) for i,j in dic.items()})
 
 """. Write a Python program to convert a given tuple of positive integers into an integer.
 Original tuple:
@@ -970,16 +970,16 @@ Original Dictionary: {'V': [10, 12], 'VI': [10], 'VII': [10, 20, 30, 40], 'VIII'
 Shortest list of values with the keys of the said dictionary: ['VI', 'VIII', 'X']
 
 """
-
-dict1 = {'V': [10, 12], 'VI': [10], 'VII': [10, 20, 30, 40], 'VIII': [20], 'IX': [10, 30, 50, 70], 'X': [80]}
-res = []
-print(dict1)
-for key,value in dict1.items():
-    min_len = min(dict1.items(),key=len)
-    if len(value) == min_len:
-        res.append(key)
-
-print(res)
+#
+# dict1 = {'V': [10, 12], 'VI': [10], 'VII': [10, 20, 30, 40], 'VIII': [20], 'IX': [10, 30, 50, 70], 'X': [80]}
+# res = []
+# print(dict1)
+# for key,value in dict1.items():
+#     min_len = min(dict1.items(),key=len)
+#     if len(value) == min_len:
+#         res.append(key)
+#
+# print(res)
 
 """ Write a  Python program to find the specified number of maximum values in a given dictionary.
 Original Dictionary:
@@ -991,16 +991,16 @@ Original Dictionary:
 5 maximum value(s) in the said dictionary:
 ['f', 'i', 'g', 'd', 'c']"""
 
-dic1 = {'a': 5, 'b': 14, 'c': 32, 'd': 35, 'e': 24, 'f': 100, 'g': 57, 'h': 8, 'i': 100}
-dic_range = 5
-res = []
-for i in range(dic_range):
-    max_element = max(dic1.items(),key=lambda x:x[1])
-    dic1.pop(max_element[0])
-    res.append(max_element[0])
-print(res)
-
-""""
+# dic1 = {'a': 5, 'b': 14, 'c': 32, 'd': 35, 'e': 24, 'f': 100, 'g': 57, 'h': 8, 'i': 100}
+# dic_range = 5
+# res = []
+# for i in range(dic_range):
+#     max_element = max(dic1.items(),key=lambda x:x[1])
+#     dic1.pop(max_element[0])
+#     res.append(max_element[0])
+# print(res)
+#
+"""
 Write a Python program to convert more than one list to a nested dictionary.
 Original strings:
 ['S001', 'S002', 'S003', 'S004']
@@ -1009,17 +1009,490 @@ Original strings:
 Nested dictionary:
 [{'S001': {'Adina Park': 85}}, {'S002': {'Leyton Marsh': 98}}, {'S003': {'Duncan Boyle': 89}}, {'S004': {'Saim Richards': 92}}]"""
 
-roll_nos = ['S001', 'S002', 'S003', 'S004']
-names = ['Adina Park', 'Leyton Marsh', 'Duncan Boyle', 'Saim Richards']
-marks = [85, 98, 89, 92]
+# roll_nos = ['S001', 'S002', 'S003', 'S004']
+# names = ['Adina Park', 'Leyton Marsh', 'Duncan Boyle', 'Saim Richards']
+# marks = [85, 98, 89, 92]
+#
+# print([{i:{j:k}} for i,j,k in zip(roll_nos,names,marks)])
+#
+# # or
+# nested_dict = []
+#
+# for i in range(len(roll_nos)):
+#     nested_dict.append({roll_nos[i]: {names[i]: marks[i]}})
+# print(nested_dict)
+#
+# ================================================================================================
+"""Write a Python program to split a given dictionary of lists into lists of dictionaries.
 
-out = [{roll_nos[i]:{names[i]:marks[i]} for i in range(len(roll_nos))}]
-print(out)
+Original dictionary of lists:
+{'Science': [88, 89, 62, 95], 'Language': [77, 78, 84, 80]}
+Split said dictionary of lists into list of dictionaries:
+[
+ {'Science': 88, 'Language': 77}, 
+ {'Science': 89, 'Language': 78},
+ {'Science': 62, 'Language': 84}, 
+ {'Science': 95, 'Language': 80}
+]
+ """
+# out = []
+# data = {'Science': [88, 89, 62, 95], 'Language': [77, 78, 84, 80]}
+#
+# result = []
+# keys = list(data.keys())
+# values = list(data.values())
+#
+# # Outer loop over the index of each element in lists
+# for i in range(len(values[0])):
+#     temp = {}
+#     # Inner loop to map each subject to its corresponding value
+#     for k in range(len(keys)):
+#         temp[keys[k]] = values[k][i]
+#     result.append(temp)
+#
+# print(result)
+#
+# print([dict(zip(data.keys(), values)) for values in zip(*data.values())])
 
-# or
-nested_dict = []
+# ===========================================================================================
 
-for i in range(len(roll_nos)):
-    nested_dict.append({roll_nos[i]: {names[i]: marks[i]}})
-print(nested_dict)
+"""Write a Python program to filter a dictionary based on values.
 
+Original Dictionary:
+{'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190}
+Marks greater than 170:
+{'Cierra Vega': 175, 'Alden Cantrell': 180, 'Pierre Cox': 190}"""
+#
+# dic = {'Cierra Vega': 175, 'Alden Cantrell': 180, 'Kierra Gentry': 165, 'Pierre Cox': 190}
+# out = {}
+# marks = 170
+# for key,value in dic.items():
+#     if value > marks:
+#         out[key] = value
+#
+# print(out)
+#
+# #  OR
+#
+# print({key:value for key,value in dic.items() if value>170 })
+
+# ===================================================================
+"""Write a Python program to create a dictionary grouping a sequence of key-value pairs into a dictionary of lists.
+
+Original list:
+[('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+Grouping a sequence of key-value pairs into a dictionary of lists:
+{'yellow': [1, 3], 'blue': [2, 4], 'red': [1]}"""
+
+# inp = [('yellow', 1), ('blue', 2), ('yellow', 3), ('blue', 4), ('red', 1)]
+# out = {}
+# for item in inp:
+#     if item[0] not in out:
+#         out[item[0]] = [item[1]]
+#     else:
+#         out[item[0]].append(item[1])
+# print(out)
+
+# ================================================================================
+"""A Python dictionary contains List as a value. Write a Python program to clear the list values in the said dictionary.
+
+Original Dictionary:
+{'C1': [10, 20, 30], 'C2': [20, 30, 40], 'C3': [12, 34]}
+Clear the list values in the said dictionary:
+{'C1': [], 'C2': [], 'C3': []}"""
+#
+# inp = {'C1': [10, 20, 30], 'C2': [20, 30, 40], 'C3': [12, 34]}
+# for key,value in inp.items():
+#     inp[key].clear()
+# print(inp)
+
+# ===================================================================================
+"""
+A Python Dictionary contains List as a value. Write a Python program to update the list values in the said dictionary.
+
+Original Dictionary:
+{'Math': [88, 89, 90], 'Physics': [92, 94, 89], 'Chemistry': [90, 87, 93]}
+Update the list values of the said dictionary:
+{'Math': [89, 90, 91], 'Physics': [90, 92, 87], 'Chemistry': [90, 87, 93]}
+"""
+# inp = {'Math': [88, 89, 90], 'Physics': [92, 94, 89], 'Chemistry': [90, 87, 93]}
+#
+# inp['Math'] = [i+1 for i in inp['Math']]
+# inp['Physics'] = [i-2 for i in inp['Physics']]
+#
+# print(inp)
+
+# =========================================================================================
+"""Write a Python program to extract a list of values from a given list of dictionaries.
+
+Original Dictionary:
+[{'Math': 90, 'Science': 92}, {'Math': 89, 'Science': 94}, {'Math': 92, 'Science': 88}]
+Extract a list of values from said list of dictionaries where subject = Science
+[92, 94, 88]
+Original Dictionary:
+[{'Math': 90, 'Science': 92}, {'Math': 89, 'Science': 94}, {'Math': 92, 'Science': 88}]
+Extract a list of values from said list of dictionaries where subject = Math
+[90, 89, 92]"""
+#
+inp = [{'Math': 90, 'Science': 92}, {'Math': 89, 'Science': 94}, {'Math': 92, 'Science': 88}]
+# subject_name = "Math"
+# marks = []
+#
+# for item in inp:
+#     for subject,value in item.items():
+#         if subject_name == subject:
+#             marks.append(value)
+# print(marks)
+# # OR
+# print([marks for item in inp for subject,marks in item.items() if subject==subject_name])
+#
+print(len(inp))
+# ==============================================================================================
+"""Write a Python program to convert a dictionary into a list of lists.
+
+Original Dictionary:
+{1: 'red', 2: 'green', 3: 'black', 4: 'white', 5: 'black'}
+Convert the said dictionary into a list of lists:
+[[1, 'red'], [2, 'green'], [3, 'black'], [4, 'white'], [5, 'black']]
+Original Dictionary:
+{'1': 'Austin Little', '2': 'Natasha Howard', '3': 'Alfred Mullins', '4': 'Jamie Rowe'}
+Convert the said dictionary into a list of lists:
+[['1', 'Austin Little'], ['2', 'Natasha Howard'], ['3', 'Alfred Mullins'], ['4', 'Jamie Rowe']]"""
+
+def convert_dictionary(dic : dict):
+    # out = []
+    # for key,value in dic.items():
+    #     out.append([key,value])
+    # return out
+
+    return [[key,value] for key,value in dic.items()]
+
+print(convert_dictionary({1: 'red', 2: 'green', 3: 'black', 4: 'white', 5: 'black'}))
+
+
+# ===============================================================================================
+
+"""Write a Python program to find the shortest list of values for the keys in a given dictionary.
+
+Original Dictionary: {'V': [10, 12], 'VI': [10], 'VII': [10, 20, 30, 40], 'VIII': [20], 'IX': [10, 30, 50, 70],'X': [80]} 
+Shortest list of values with the keys of the said dictionary: ['VI', 'VIII', 'X']"""
+
+# inp = {'V': [10, 12], 'VI': [10], 'VII': [10, 20, 30, 40], 'VIII': [20], 'IX': [10, 30, 50, 70],'X': [80]}
+#
+# out = []
+# min_len = min(len(value) for value in inp.values())
+# for key,value in inp.items():
+#     if len(value) == min_len:
+#         out.append(key)
+# print(out)
+
+"""data = [
+ {"a":1,"b":2},
+ {"a":3,"c":4},
+ {"b":5}
+]
+
+Output
+
+{
+"a":4,
+"b":7,
+"c":4
+}"""
+
+data = [
+ {"a":1,"b":2},
+ {"a":3,"c":4},
+ {"b":5}
+]
+# res = {}
+# for item in data:
+#     for key,value in item.items():
+#        if key not in res:
+#            res[key] = value
+#        else:
+#            res[key] += value
+#
+# print(res)
+
+# ============================================================
+"""keys = ["name","age","city"]
+values = ["kunal",28,"nagpur"]
+
+Output
+{
+"name":"kunal",
+"age":28,
+"city":"nagpur"
+}"""
+
+keys = ["name","age","city"]
+values = ["kunal",28,"nagpur"]
+
+print({keys[i]: values[i] for i in range(len(keys))})
+res1 = {}
+for i in range(len(keys)):
+    res1.update({keys[i]:values[i]})
+
+print(res1)
+
+# ===========================================================
+"""data = {
+"a":10,
+"b":40,
+"c":30,
+"d":20
+}
+
+Find top 2 values
+
+Output
+{
+"b":40,
+"c":30
+}"""
+
+data3 = {
+"a":10,
+"b":40,
+"c":30,
+"d":20
+}
+
+print(dict(sorted(data3.items(),key=lambda x:x[1],reverse=True)[:2]))
+
+# =========================================================================
+"""data = {
+"a":None,
+"b":20,
+"c":None,
+"d":40
+}
+
+Output
+{
+"b":20,
+"d":40
+}"""
+
+# data4 = {
+# "a":None,
+# "b":20,
+# "c":None,
+# "d":40
+# }
+
+# print({key:value for key,value in data4.items() if value is not None})
+
+# ==========================================================================
+"""data = {
+ "store1":{"apple":10,"banana":20},
+ "store2":{"apple":5,"banana":15}
+}
+
+Output
+{
+"apple":15,
+"banana":35
+}"""
+
+data5 = {
+ "store1":{"apple":10,"banana":20},
+ "store2":{"apple":5,"banana":15}
+}
+
+# out = {}
+# for key,value in data5.items():
+#     for k,v in value.items():
+#         if k not in out:
+#            out[k] = v
+#         else:
+#             out[k] += v
+#
+# print(out)
+
+# ==============================================================================
+"""sentence = "python is easy python is powerful"
+
+Output
+
+{
+"python":2,
+"is":2,
+"easy":1,
+"powerful":1
+}"""
+
+sentence = "python is easy python is powerful"
+# freq = {}
+#
+# for word in sentence.split():
+#     if word not in freq:
+#         freq[word] = 1
+#
+#     else:
+#         freq[word] += 1
+# print(freq)
+
+# ============================================================
+"""d1 = {"a":1,"b":2,"c":3}
+d2 = {"b":10,"c":20,"d":30}
+
+Output
+
+{
+"b": (2,10),
+"c": (3,20)
+}"""
+#
+# d1 = {"a":1,"b":2,"c":3}
+# d2 = {"b":10,"c":20,"d":30}
+#
+# out2 = {}
+# for key in d1:
+#     if key in d2:
+#         out2[key] = (d1[key],d2[key])
+# print(out2)
+#
+# # or
+#
+# print({k : (d1[k],d2[k]) for k in d1 if k in d2})
+
+# =============================================================
+"""logs = [
+ ("user1","login"),
+ ("user2","login"),
+ ("user1","logout"),
+ ("user2","logout"),
+ ("user1","login")
+]
+
+Output
+
+{
+"user1":3,
+"user2":2
+}"""
+
+logs = [
+ ("user1","login"),
+ ("user2","login"),
+ ("user1","logout"),
+ ("user2","logout"),
+ ("user1","login")
+]
+# out4 = {}
+#
+# for user,action in logs:
+#     if user not in out4:
+#         out4[user] = 1
+#     else:
+#         out4[user] += 1
+# print(out4)
+
+# ================================
+
+print({i: i ** 2 for i in range(1,11)})
+
+# ======================================
+
+"""""
+data = {
+"a":10,
+"b":80,
+"c":45,
+"d":60
+}
+
+Output
+
+{
+"b":80,
+"d":60
+}
+"""""
+
+# data6 = {
+# "a":10,
+# "b":80,
+# "c":45,
+# "d":60
+# }
+
+# print({key:value for key,value in data6.items() if value > 50})
+# =======================================================================
+
+"""Convert List to Dictionary with Length
+words = ["python","automation","test"]
+
+Output
+
+{
+"python":6,
+"automation":10,
+"test":4
+}"""
+
+words = ["python","automation","test"]
+
+print({word:len(word) for word in words})
+
+# ==========================================================
+"""data = {
+"a":1,
+"b":2,
+"c":3
+}
+
+Output
+
+{
+1:"a",
+2:"b",
+3:"c"
+}"""
+
+data7 = {
+"a":1,
+"b":2,
+"c":3
+}
+
+print({value : key for key,value in data7.items()})
+
+# ========================================================
+"""data = {
+"user":{
+"name":"kunal",
+"age":28
+}
+}
+
+Output
+
+{
+"user.name":"kunal",
+"user.age":28
+}"""
+
+# data8 = {
+# "user":{
+# "name":"kunal",
+# "age":28
+# }
+# }
+
+# print({f"{key}.{k}": v for key,value in data8.items() for k,v in value.items()})
+
+"""words = ["apple","ant","banana","ball","cat"]
+
+Output
+
+{
+'a':['apple','ant'],
+'b':['banana','ball'],
+'c':['cat']
+}"""
+
+# words = ["apple","ant","banana","ball","cat"]
+# print({letter :[word for word in words if word[0] == letter] for letter in {word[0] for word in words}})

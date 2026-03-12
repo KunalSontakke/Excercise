@@ -1,11 +1,9 @@
 # http and Https
 # api mocking
 # =============================================================================================
-# def get_user_age(user):
-#     if "age" in user:
-#         return user["age"]
-#     else:
-#         return None
+def get_user_age(user):
+    return user["age"]
+
 def show_dictionary(user):
     return user["age"] if "age" in user else None
 

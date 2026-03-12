@@ -266,26 +266,7 @@ from selenium.webdriver.support.select import Select
 # print(type(result))
 
 # ======================================================================================================================
-# def measure_exec_time(func):
-#     def wrapper(*args):
-#         start_time = time.time()
-#         end_time = time.time()
-#         exec_time = end_time - start_time
-#         if args is not None:
-#             result = func(*args)
-#         else:
-#             result = func()
-#         print(f"{func.__name__} took {exec_time} seconds")
-#         return result
-#     return wrapper
-#
-# @measure_exec_time
-# def show_details():
-#     dic = {"name":"kunal","company":"calsoft"}
-#     return dic
-#
-#
-# print(show_details())
+
 
 # Write a Python program to create a decorator that logs the arguments and return value of a function.The decorator
 # in this code logs the function name, arguments, and return value whenever the decorated function is called

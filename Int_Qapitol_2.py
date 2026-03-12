@@ -11,7 +11,7 @@
 6)
 """
 
-# """write a command to exclude a paricular test case"""
+# """write a command to exclude a particular test case"""
 # import pytest
 #
 #

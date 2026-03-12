@@ -1,8 +1,8 @@
 # def multiply_Number(num):
 #     for i in range(1, 11):
 #         print(num, "x", i,"=", num*i)
-#
-#
+
+
 # num = int(input("Enter the Number"))
 # multiply_Number(num)
 #
